@@ -1,0 +1,256 @@
+⨀	n-ary circled dot operator 	u+2a00	2a00
+⨁	n-ary circled plus operator 	u+2a01	2a01
+⨂	n-ary circled times operator 	u+2a02	2a02
+⨃	n-ary union operator with dot 	u+2a03	2a03
+⨄	n-ary union operator with plus 	u+2a04	2a04
+⨅	n-ary square intersection operator 	u+2a05	2a05
+⨆	n-ary square union operator 	u+2a06	2a06
+⨇	two logical and operator 	merge	2a07
+⨈	two logical or operator 	u+2a08	2a08
+⨉	n-ary times operator 	u+2a09	2a09
+⨊	modulo two sum 	u+2a0a	2a0a
+⨋	summation with integral 	u+2a0b	2a0b
+⨌	quadruple integral operator 	u+2a0c	2a0c
+⨍	finite part integral 	u+2a0d	2a0d
+⨎	integral with double stroke 	u+2a0e	2a0e
+⨏	integral average with slash 	u+2a0f	2a0f
+⨐	circulation function 	u+2a10	2a10
+⨑	anticlockwise integration 	u+2a11	2a11
+⨒	line integration with rectangular path around pole 	u+2a12	2a12
+⨓	line integration with semicircular path around pole 	u+2a13	2a13
+⨔	line integration not including the pole 	u+2a14	2a14
+⨕	integral around a point operator 	u+2a15	2a15
+⨖	quaternion integral operator 	u+2a16	2a16
+⨗	integral with leftwards arrow with hook 	u+2a17	2a17
+⨘	integral with times sign 	u+2a18	2a18
+⨙	integral with intersection 	u+2a19	2a19
+⨚	integral with union 	u+2a1a	2a1a
+⨛	integral with overbar 	upper integral	2a1b
+⨜	integral with underbar 	lower integral	2a1c
+⨝	join 	large bowtie	2a1d
+⨞	large left triangle operator 	u+2a1e	2a1e
+⨟	z notation schema composition 	u+2a1f	2a1f
+⨠	z notation schema piping 	u+2a20	2a20
+⨡	z notation schema projection 	u+2a21	2a21
+⨢	plus sign with small circle above 	u+2a22	2a22
+⨣	plus sign with circumflex accent above 	u+2a23	2a23
+⨤	plus sign with tilde above 	positive difference or sum	2a24
+⨥	plus sign with dot below 	u+2a25	2a25
+⨦	plus sign with tilde below 	sum or positive difference	2a26
+⨧	plus sign with subscript two 	nim-addition	2a27
+⨨	plus sign with black triangle 	u+2a28	2a28
+⨩	minus sign with comma above 	u+2a29	2a29
+⨪	minus sign with dot below 	u+2a2a	2a2a
+⨫	minus sign with falling dots 	u+2a2b	2a2b
+⨬	minus sign with rising dots 	u+2a2c	2a2c
+⨭	plus sign in left half circle 	u+2a2d	2a2d
+⨮	plus sign in right half circle 	u+2a2e	2a2e
+⨯	vector or cross product 	u+2a2f	2a2f
+⨰	multiplication sign with dot above 	u+2a30	2a30
+⨱	multiplication sign with underbar 	u+2a31	2a31
+⨲	semidirect product with bottom closed 	u+2a32	2a32
+⨳	smash product 	u+2a33	2a33
+⨴	multiplication sign in left half circle 	u+2a34	2a34
+⨵	multiplication sign in right half circle 	u+2a35	2a35
+⨶	circled multiplication sign with circumflex accent 	u+2a36	2a36
+⨷	multiplication sign in double circle 	u+2a37	2a37
+⨸	circled division sign 	u+2a38	2a38
+⨹	plus sign in triangle 	u+2a39	2a39
+⨺	minus sign in triangle 	u+2a3a	2a3a
+⨻	multiplication sign in triangle 	u+2a3b	2a3b
+⨼	interior product 	u+2a3c	2a3c
+⨽	righthand interior product 	u+2a3d	2a3d
+⨾	z notation relational composition 	u+2a3e	2a3e
+⨿	amalgamation or coproduct 	u+2a3f	2a3f
+⩀	intersection with dot 	u+2a40	2a40
+⩁	union with minus sign 	z notation bag subtraction	2a41
+⩂	union with overbar 	u+2a42	2a42
+⩃	intersection with overbar 	u+2a43	2a43
+⩄	intersection with logical and 	u+2a44	2a44
+⩅	union with logical or 	u+2a45	2a45
+⩆	union above intersection 	u+2a46	2a46
+⩇	intersection above union 	u+2a47	2a47
+⩈	union above bar above intersection 	u+2a48	2a48
+⩉	intersection above bar above union 	u+2a49	2a49
+⩊	union beside and joined with union 	u+2a4a	2a4a
+⩋	intersection beside and joined with intersection 	u+2a4b	2a4b
+⩌	closed union with serifs 	u+2a4c	2a4c
+⩍	closed intersection with serifs 	u+2a4d	2a4d
+⩎	double square intersection 	u+2a4e	2a4e
+⩏	double square union 	u+2a4f	2a4f
+⩐	closed union with serifs and smash product 	u+2a50	2a50
+⩑	logical and with dot above 	u+2a51	2a51
+⩒	logical or with dot above 	u+2a52	2a52
+⩓	double logical and 	u+2a53	2a53
+⩔	double logical or 	u+2a54	2a54
+⩕	two intersecting logical and 	u+2a55	2a55
+⩖	two intersecting logical or 	u+2a56	2a56
+⩗	sloping large or 	u+2a57	2a57
+⩘	sloping large and 	u+2a58	2a58
+⩙	logical or overlapping logical and 	u+2a59	2a59
+⩚	logical and with middle stem 	u+2a5a	2a5a
+⩛	logical or with middle stem 	u+2a5b	2a5b
+⩜	logical and with horizontal dash 	u+2a5c	2a5c
+⩝	logical or with horizontal dash 	u+2a5d	2a5d
+⩞	logical and with double overbar 	u+2a5e	2a5e
+⩟	logical and with underbar 	u+2a5f	2a5f
+⩠	logical and with double underbar 	u+2a60	2a60
+⩡	small vee with underbar 	u+2a61	2a61
+⩢	logical or with double overbar 	u+2a62	2a62
+⩣	logical or with double underbar 	u+2a63	2a63
+⩤	z notation domain antirestriction 	u+2a64	2a64
+⩥	z notation range antirestriction 	u+2a65	2a65
+⩦	equals sign with dot below 	u+2a66	2a66
+⩧	identical with dot above 	u+2a67	2a67
+⩨	triple horizontal bar with double vertical stroke 	identical and parallel to	2a68
+⩩	triple horizontal bar with triple vertical stroke 	u+2a69	2a69
+⩪	tilde operator with dot above 	u+2a6a	2a6a
+⩫	tilde operator with rising dots 	u+2a6b	2a6b
+⩬	similar minus similar 	u+2a6c	2a6c
+⩭	congruent with dot above 	u+2a6d	2a6d
+⩮	equals with asterisk 	u+2a6e	2a6e
+⩯	almost equal to with circumflex accent 	u+2a6f	2a6f
+⩰	approximately equal or equal to 	u+2a70	2a70
+⩱	equals sign above plus sign 	u+2a71	2a71
+⩲	plus sign above equals sign 	u+2a72	2a72
+⩳	equals sign above tilde operator 	u+2a73	2a73
+⩴	double colon equal 	u+2a74	2a74
+⩵	two consecutive equals signs 	u+2a75	2a75
+⩶	three consecutive equals signs 	u+2a76	2a76
+⩷	equals sign with two dots above and two dots below 	u+2a77	2a77
+⩸	equivalent with four dots above 	u+2a78	2a78
+⩹	less-than with circle inside 	u+2a79	2a79
+⩺	greater-than with circle inside 	u+2a7a	2a7a
+⩻	less-than with question mark above 	u+2a7b	2a7b
+⩼	greater-than with question mark above 	u+2a7c	2a7c
+⩽	less-than or slanted equal to 	u+2a7d	2a7d
+⩾	greater-than or slanted equal to 	u+2a7e	2a7e
+⩿	less-than or slanted equal to with dot inside 	u+2a7f	2a7f
+⪀	greater-than or slanted equal to with dot inside 	u+2a80	2a80
+⪁	less-than or slanted equal to with dot above 	u+2a81	2a81
+⪂	greater-than or slanted equal to with dot above 	u+2a82	2a82
+⪃	less-than or slanted equal to with dot above right 	u+2a83	2a83
+⪄	greater-than or slanted equal to with dot above left 	u+2a84	2a84
+⪅	less-than or approximate 	u+2a85	2a85
+⪆	greater-than or approximate 	u+2a86	2a86
+⪇	less-than and single-line not equal to 	u+2a87	2a87
+⪈	greater-than and single-line not equal to 	u+2a88	2a88
+⪉	less-than and not approximate 	u+2a89	2a89
+⪊	greater-than and not approximate 	u+2a8a	2a8a
+⪋	less-than above double-line equal above greater-than 	u+2a8b	2a8b
+⪌	greater-than above double-line equal above less-than 	u+2a8c	2a8c
+⪍	less-than above similar or equal 	u+2a8d	2a8d
+⪎	greater-than above similar or equal 	u+2a8e	2a8e
+⪏	less-than above similar above greater-than 	u+2a8f	2a8f
+⪐	greater-than above similar above less-than 	u+2a90	2a90
+⪑	less-than above greater-than above double-line equal 	u+2a91	2a91
+⪒	greater-than above less-than above double-line equal 	u+2a92	2a92
+⪓	less-than above slanted equal above greater-than above slanted equal 	u+2a93	2a93
+⪔	greater-than above slanted equal above less-than above slanted equal 	u+2a94	2a94
+⪕	slanted equal to or less-than 	u+2a95	2a95
+⪖	slanted equal to or greater-than 	u+2a96	2a96
+⪗	slanted equal to or less-than with dot inside 	u+2a97	2a97
+⪘	slanted equal to or greater-than with dot inside 	u+2a98	2a98
+⪙	double-line equal to or less-than 	u+2a99	2a99
+⪚	double-line equal to or greater-than 	u+2a9a	2a9a
+⪛	double-line slanted equal to or less-than 	u+2a9b	2a9b
+⪜	double-line slanted equal to or greater-than 	u+2a9c	2a9c
+⪝	similar or less-than 	u+2a9d	2a9d
+⪞	similar or greater-than 	u+2a9e	2a9e
+⪟	similar above less-than above equals sign 	u+2a9f	2a9f
+⪠	similar above greater-than above equals sign 	u+2aa0	2aa0
+⪡	double nested less-than 	absolute continuity	2aa1
+⪢	double nested greater-than 	u+2aa2	2aa2
+⪣	double nested less-than with underbar 	u+2aa3	2aa3
+⪤	greater-than overlapping less-than 	u+2aa4	2aa4
+⪥	greater-than beside less-than 	u+2aa5	2aa5
+⪦	less-than closed by curve 	u+2aa6	2aa6
+⪧	greater-than closed by curve 	u+2aa7	2aa7
+⪨	less-than closed by curve above slanted equal 	u+2aa8	2aa8
+⪩	greater-than closed by curve above slanted equal 	u+2aa9	2aa9
+⪪	smaller than 	u+2aaa	2aaa
+⪫	larger than 	u+2aab	2aab
+⪬	smaller than or equal to 	u+2aac	2aac
+⪭	larger than or equal to 	u+2aad	2aad
+⪮	equals sign with bumpy above 	u+2aae	2aae
+⪯	precedes above single-line equals sign 	u+2aaf	2aaf
+⪰	succeeds above single-line equals sign 	u+2ab0	2ab0
+⪱	precedes above single-line not equal to 	u+2ab1	2ab1
+⪲	succeeds above single-line not equal to 	u+2ab2	2ab2
+⪳	precedes above equals sign 	u+2ab3	2ab3
+⪴	succeeds above equals sign 	u+2ab4	2ab4
+⪵	precedes above not equal to 	u+2ab5	2ab5
+⪶	succeeds above not equal to 	u+2ab6	2ab6
+⪷	precedes above almost equal to 	u+2ab7	2ab7
+⪸	succeeds above almost equal to 	u+2ab8	2ab8
+⪹	precedes above not almost equal to 	u+2ab9	2ab9
+⪺	succeeds above not almost equal to 	u+2aba	2aba
+⪻	double precedes 	u+2abb	2abb
+⪼	double succeeds 	u+2abc	2abc
+⪽	subset with dot 	u+2abd	2abd
+⪾	superset with dot 	u+2abe	2abe
+⪿	subset with plus sign below 	u+2abf	2abf
+⫀	superset with plus sign below 	u+2ac0	2ac0
+⫁	subset with multiplication sign below 	u+2ac1	2ac1
+⫂	superset with multiplication sign below 	u+2ac2	2ac2
+⫃	subset of or equal to with dot above 	u+2ac3	2ac3
+⫄	superset of or equal to with dot above 	u+2ac4	2ac4
+⫅	subset of above equals sign 	u+2ac5	2ac5
+⫆	superset of above equals sign 	u+2ac6	2ac6
+⫇	subset of above tilde operator 	u+2ac7	2ac7
+⫈	superset of above tilde operator 	u+2ac8	2ac8
+⫉	subset of above almost equal to 	u+2ac9	2ac9
+⫊	superset of above almost equal to 	u+2aca	2aca
+⫋	subset of above not equal to 	u+2acb	2acb
+⫌	superset of above not equal to 	u+2acc	2acc
+⫍	square left open box operator 	u+2acd	2acd
+⫎	square right open box operator 	u+2ace	2ace
+⫏	closed subset 	u+2acf	2acf
+⫐	closed superset 	u+2ad0	2ad0
+⫑	closed subset or equal to 	u+2ad1	2ad1
+⫒	closed superset or equal to 	u+2ad2	2ad2
+⫓	subset above superset 	u+2ad3	2ad3
+⫔	superset above subset 	u+2ad4	2ad4
+⫕	subset above subset 	u+2ad5	2ad5
+⫖	superset above superset 	u+2ad6	2ad6
+⫗	superset beside subset 	u+2ad7	2ad7
+⫘	superset beside and joined by dash with subset 	u+2ad8	2ad8
+⫙	element of opening downwards 	u+2ad9	2ad9
+⫚	pitchfork with tee top 	u+2ada	2ada
+⫛	transversal intersection 	u+2adb	2adb
+⫝̸	forking 	not independent	2adc
+⫝	nonforking 	independent	2add
+⫞	short left tack 	u+2ade	2ade
+⫟	short down tack 	u+2adf	2adf
+⫠	short up tack 	u+2ae0	2ae0
+⫡	perpendicular with s 	u+2ae1	2ae1
+⫢	vertical bar triple right turnstile 	ordinarily satisfies	2ae2
+⫣	double vertical bar left turnstile 	u+2ae3	2ae3
+⫤	vertical bar double left turnstile 	u+2ae4	2ae4
+⫥	double vertical bar double left turnstile 	u+2ae5	2ae5
+⫦	long dash from left member of double vertical 	u+2ae6	2ae6
+⫧	short down tack with overbar 	u+2ae7	2ae7
+⫨	short up tack with underbar 	u+2ae8	2ae8
+⫩	short up tack above short down tack 	u+2ae9	2ae9
+⫪	double down tack 	u+2aea	2aea
+⫫	double up tack 	independence	2aeb
+⫬	double stroke not sign 	u+2aec	2aec
+⫭	reversed double stroke not sign 	u+2aed	2aed
+⫮	does not divide with reversed negation slash 	u+2aee	2aee
+⫯	vertical line with circle above 	u+2aef	2aef
+⫰	vertical line with circle below 	u+2af0	2af0
+⫱	down tack with circle below 	necessarily satisfies	2af1
+⫲	parallel with horizontal stroke 	u+2af2	2af2
+⫳	parallel with tilde operator 	u+2af3	2af3
+⫴	triple vertical bar binary relation 	interleave	2af4
+⫵	triple vertical bar with horizontal stroke 	u+2af5	2af5
+⫶	triple colon operator 	u+2af6	2af6
+⫷	triple nested less-than 	u+2af7	2af7
+⫸	triple nested greater-than 	u+2af8	2af8
+⫹	double-line slanted less-than or equal to 	u+2af9	2af9
+⫺	double-line slanted greater-than or equal to 	u+2afa	2afa
+⫻	triple solidus binary relation 	u+2afb	2afb
+⫼	large triple vertical bar operator 	u+2afc	2afc
+⫽	double solidus operator 	u+2afd	2afd
+⫾	white vertical bar 	dijkstra choice	2afe
+⫿	n-ary white vertical bar 	n-ary dijkstra choice	2aff

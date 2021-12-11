@@ -1,0 +1,256 @@
+∀	for all 	universal quantifier	2200
+∁	complement 	u+2201	2201
+∂	partial differential 	u+2202	2202
+∃	there exists 	existential quantifier	2203
+∄	there does not exist 	u+2204	2204
+∅	empty set 	null set	2205
+∆	increment 	laplace operator , forward difference , symmetric difference (in set theory)	2206
+∇	nabla 	backward difference , gradient, del	2207
+∈	element of 	u+2208	2208
+∉	not an element of 	u+2209	2209
+∊	small element of 	u+220a	220a
+∋	contains as member 	such that	220b
+∌	does not contain as member 	u+220c	220c
+∍	small contains as member 	u+220d	220d
+∎	end of proof 	q.e.d.	220e
+∏	n-ary product 	product sign	220f
+∐	n-ary coproduct 	coproduct sign	2210
+∑	n-ary summation 	summation sign	2211
+−	minus sign 	u+2212	2212
+∓	minus-or-plus sign 	u+2213	2213
+∔	dot plus 	u+2214	2214
+∕	division slash 	u+2215	2215
+∖	set minus 	u+2216	2216
+∗	asterisk operator 	u+2217	2217
+∘	ring operator 	composite function , apl jot	2218
+∙	bullet operator 	u+2219	2219
+√	square root 	radical sign	221a
+∛	cube root 	u+221b	221b
+∜	fourth root 	u+221c	221c
+∝	proportional to 	u+221d	221d
+∞	infinity 	u+221e	221e
+∟	right angle 	u+221f	221f
+∠	angle 	u+2220	2220
+∡	measured angle 	u+2221	2221
+∢	spherical angle 	angle arc	2222
+∣	divides 	such that , apl stile	2223
+∤	does not divide 	u+2224	2224
+∥	parallel to 	u+2225	2225
+∦	not parallel to 	u+2226	2226
+∧	logical and 	wedge, conjunction	2227
+∨	logical or 	vee, disjunction	2228
+∩	intersection 	cap, hat	2229
+∪	union 	cup	222a
+∫	integral 	u+222b	222b
+∬	double integral 	u+222c	222c
+∭	triple integral 	u+222d	222d
+∮	contour integral 	u+222e	222e
+∯	surface integral 	u+222f	222f
+∰	volume integral 	u+2230	2230
+∱	clockwise integral 	u+2231	2231
+∲	clockwise contour integral 	u+2232	2232
+∳	anticlockwise contour integral 	u+2233	2233
+∴	therefore 	u+2234	2234
+∵	because 	u+2235	2235
+∶	ratio 	u+2236	2236
+∷	proportion 	u+2237	2237
+∸	dot minus 	saturating subtraction	2238
+∹	excess 	u+2239	2239
+∺	geometric proportion 	u+223a	223a
+∻	homothetic 	u+223b	223b
+∼	tilde operator 	varies with (proportional to) , difference between , similar to , not , cycle , apl tilde	223c
+∽	reversed tilde 	lazy s	223d
+∾	inverted lazy s 	most positive	223e
+∿	sine wave 	alternating current	223f
+≀	wreath product 	u+2240	2240
+≁	not tilde 	u+2241	2241
+≂	minus tilde 	u+2242	2242
+≃	asymptotically equal to 	u+2243	2243
+≄	not asymptotically equal to 	u+2244	2244
+≅	approximately equal to 	u+2245	2245
+≆	approximately but not actually equal to 	u+2246	2246
+≇	neither approximately nor actually equal to 	u+2247	2247
+≈	almost equal to 	asymptotic to	2248
+≉	not almost equal to 	u+2249	2249
+≊	almost equal or equal to 	u+224a	224a
+≋	triple tilde 	libra	224b
+≌	all equal to 	u+224c	224c
+≍	equivalent to 	u+224d	224d
+≎	geometrically equivalent to 	u+224e	224e
+≏	difference between 	u+224f	224f
+≐	approaches the limit 	u+2250	2250
+≑	geometrically equal to 	u+2251	2251
+≒	approximately equal to or the image of 	nearly equals	2252
+≓	image of or approximately equal to 	u+2253	2253
+≔	colon equals 	u+2254	2254
+≕	equals colon 	u+2255	2255
+≖	ring in equal to 	u+2256	2256
+≗	ring equal to 	approximately equal to	2257
+≘	corresponds to 	u+2258	2258
+≙	estimates 	corresponds to	2259
+≚	equiangular to 	u+225a	225a
+≛	star equals 	u+225b	225b
+≜	delta equal to 	equiangular , equal to by definition	225c
+≝	equal to by definition 	u+225d	225d
+≞	measured by 	u+225e	225e
+≟	questioned equal to 	u+225f	225f
+≠	not equal to 	u+2260	2260
+≡	identical to 	u+2261	2261
+≢	not identical to 	u+2262	2262
+≣	strictly equivalent to 	u+2263	2263
+≤	less-than or equal to 	u+2264	2264
+≥	greater-than or equal to 	u+2265	2265
+≦	less-than over equal to 	u+2266	2266
+≧	greater-than over equal to 	u+2267	2267
+≨	less-than but not equal to 	u+2268	2268
+≩	greater-than but not equal to 	u+2269	2269
+≪	much less-than 	u+226a	226a
+≫	much greater-than 	u+226b	226b
+≬	between 	plaintiff, quantic	226c
+≭	not equivalent to 	u+226d	226d
+≮	not less-than 	u+226e	226e
+≯	not greater-than 	u+226f	226f
+≰	neither less-than nor equal to 	u+2270	2270
+≱	neither greater-than nor equal to 	u+2271	2271
+≲	less-than or equivalent to 	u+2272	2272
+≳	greater-than or equivalent to 	u+2273	2273
+≴	neither less-than nor equivalent to 	u+2274	2274
+≵	neither greater-than nor equivalent to 	u+2275	2275
+≶	less-than or greater-than 	u+2276	2276
+≷	greater-than or less-than 	u+2277	2277
+≸	neither less-than nor greater-than 	u+2278	2278
+≹	neither greater-than nor less-than 	u+2279	2279
+≺	precedes 	lower rank than	227a
+≻	succeeds 	higher rank than	227b
+≼	precedes or equal to 	u+227c	227c
+≽	succeeds or equal to 	u+227d	227d
+≾	precedes or equivalent to 	u+227e	227e
+≿	succeeds or equivalent to 	u+227f	227f
+⊀	does not precede 	u+2280	2280
+⊁	does not succeed 	u+2281	2281
+⊂	subset of 	included in set	2282
+⊃	superset of 	includes in set	2283
+⊄	not a subset of 	u+2284	2284
+⊅	not a superset of 	u+2285	2285
+⊆	subset of or equal to 	u+2286	2286
+⊇	superset of or equal to 	u+2287	2287
+⊈	neither a subset of nor equal to 	u+2288	2288
+⊉	neither a superset of nor equal to 	u+2289	2289
+⊊	subset of with not equal to 	u+228a	228a
+⊋	superset of with not equal to 	u+228b	228b
+⊌	multiset 	u+228c	228c
+⊍	multiset multiplication 	u+228d	228d
+⊎	multiset union 	z notation bag addition	228e
+⊏	square image of 	u+228f	228f
+⊐	square original of 	u+2290	2290
+⊑	square image of or equal to 	u+2291	2291
+⊒	square original of or equal to 	u+2292	2292
+⊓	square cap 	u+2293	2293
+⊔	square cup 	u+2294	2294
+⊕	circled plus 	direct sum , vector pointing into page	2295
+⊖	circled minus 	symmetric difference	2296
+⊗	circled times 	tensor product , vector pointing into page	2297
+⊘	circled division slash 	ban, disable	2298
+⊙	circled dot operator 	direct product , vector pointing out of page	2299
+⊚	circled ring operator 	u+229a	229a
+⊛	circled asterisk operator 	new year, christmas	229b
+⊜	circled equals 	u+229c	229c
+⊝	circled dash 	u+229d	229d
+⊞	squared plus 	u+229e	229e
+⊟	squared minus 	u+229f	229f
+⊠	squared times 	u+22a0	22a0
+⊡	squared dot operator 	u+22a1	22a1
+⊢	right tack 	turnstile , proves, implies, yields , reducible	22a2
+⊣	left tack 	reverse turnstile , non-theorem, does not yield	22a3
+⊤	down tack 	top	22a4
+⊥	up tack 	base, bottom	22a5
+⊦	assertion 	reduces to	22a6
+⊧	models 	u+22a7	22a7
+⊨	true 	statement is true, valid , is a tautology , satisfies , results in	22a8
+⊩	forces 	u+22a9	22a9
+⊪	triple vertical bar right turnstile 	u+22aa	22aa
+⊫	double vertical bar double right turnstile 	u+22ab	22ab
+⊬	does not prove 	u+22ac	22ac
+⊭	not true 	u+22ad	22ad
+⊮	does not force 	u+22ae	22ae
+⊯	negated double vertical bar double right turnstile 	u+22af	22af
+⊰	precedes under relation 	u+22b0	22b0
+⊱	succeeds under relation 	u+22b1	22b1
+⊲	normal subgroup of 	u+22b2	22b2
+⊳	contains as normal subgroup 	u+22b3	22b3
+⊴	normal subgroup of or equal to 	u+22b4	22b4
+⊵	contains as normal subgroup or equal to 	u+22b5	22b5
+⊶	original of 	u+22b6	22b6
+⊷	image of 	u+22b7	22b7
+⊸	multimap 	u+22b8	22b8
+⊹	hermitian conjugate matrix 	u+22b9	22b9
+⊺	intercalate 	u+22ba	22ba
+⊻	xor 	u+22bb	22bb
+⊼	nand 	u+22bc	22bc
+⊽	nor 	u+22bd	22bd
+⊾	right angle with arc 	u+22be	22be
+⊿	right triangle 	u+22bf	22bf
+⋀	n-ary logical and 	u+22c0	22c0
+⋁	n-ary logical or 	u+22c1	22c1
+⋂	n-ary intersection 	z notation generalised intersection	22c2
+⋃	n-ary union 	z notation generalised union	22c3
+⋄	diamond operator 	u+22c4	22c4
+⋅	dot operator 	u+22c5	22c5
+⋆	star operator 	u+22c6	22c6
+⋇	division times 	u+22c7	22c7
+⋈	bowtie 	u+22c8	22c8
+⋉	left normal factor semidirect product 	u+22c9	22c9
+⋊	right normal factor semidirect product 	u+22ca	22ca
+⋋	left semidirect product 	u+22cb	22cb
+⋌	right semidirect product 	u+22cc	22cc
+⋍	reversed tilde equals 	u+22cd	22cd
+⋎	curly logical or 	u+22ce	22ce
+⋏	curly logical and 	u+22cf	22cf
+⋐	double subset 	u+22d0	22d0
+⋑	double superset 	u+22d1	22d1
+⋒	double intersection 	u+22d2	22d2
+⋓	double union 	u+22d3	22d3
+⋔	pitchfork 	proper intersection	22d4
+⋕	equal and parallel to 	u+22d5	22d5
+⋖	less-than with dot 	u+22d6	22d6
+⋗	greater-than with dot 	u+22d7	22d7
+⋘	very much less-than 	u+22d8	22d8
+⋙	very much greater-than 	u+22d9	22d9
+⋚	less-than equal to or greater-than 	u+22da	22da
+⋛	greater-than equal to or less-than 	u+22db	22db
+⋜	equal to or less-than 	u+22dc	22dc
+⋝	equal to or greater-than 	u+22dd	22dd
+⋞	equal to or precedes 	u+22de	22de
+⋟	equal to or succeeds 	u+22df	22df
+⋠	does not precede or equal 	u+22e0	22e0
+⋡	does not succeed or equal 	u+22e1	22e1
+⋢	not square image of or equal to 	u+22e2	22e2
+⋣	not square original of or equal to 	u+22e3	22e3
+⋤	square image of or not equal to 	u+22e4	22e4
+⋥	square original of or not equal to 	u+22e5	22e5
+⋦	less-than but not equivalent to 	u+22e6	22e6
+⋧	greater-than but not equivalent to 	u+22e7	22e7
+⋨	precedes but not equivalent to 	u+22e8	22e8
+⋩	succeeds but not equivalent to 	u+22e9	22e9
+⋪	not normal subgroup of 	u+22ea	22ea
+⋫	does not contain as normal subgroup 	u+22eb	22eb
+⋬	not normal subgroup of or equal to 	u+22ec	22ec
+⋭	does not contain as normal subgroup or equal 	u+22ed	22ed
+⋮	vertical ellipsis 	u+22ee	22ee
+⋯	midline horizontal ellipsis 	u+22ef	22ef
+⋰	up right diagonal ellipsis 	u+22f0	22f0
+⋱	down right diagonal ellipsis 	u+22f1	22f1
+⋲	element of with long horizontal stroke 	u+22f2	22f2
+⋳	element of with vertical bar at end of horizontal stroke 	u+22f3	22f3
+⋴	small element of with vertical bar at end of horizontal stroke 	u+22f4	22f4
+⋵	element of with dot above 	u+22f5	22f5
+⋶	element of with overbar 	u+22f6	22f6
+⋷	small element of with overbar 	u+22f7	22f7
+⋸	element of with underbar 	u+22f8	22f8
+⋹	element of with two horizontal strokes 	u+22f9	22f9
+⋺	contains with long horizontal stroke 	u+22fa	22fa
+⋻	contains with vertical bar at end of horizontal stroke 	u+22fb	22fb
+⋼	small contains with vertical bar at end of horizontal stroke 	u+22fc	22fc
+⋽	contains with overbar 	u+22fd	22fd
+⋾	small contains with overbar 	u+22fe	22fe
+⋿	z notation bag membership 	u+22ff	22ff

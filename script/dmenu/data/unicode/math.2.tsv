@@ -1,0 +1,48 @@
+⟀	three dimensional angle 	u+27c0	27c0
+⟁	white triangle containing small white triangle 	u+27c1	27c1
+⟂	perpendicular 	orthogonal to	27c2
+⟃	open subset 	u+27c3	27c3
+⟄	open superset 	u+27c4	27c4
+⟅	left s-shaped bag delimiter 	u+27c5	27c5
+⟆	right s-shaped bag delimiter 	u+27c6	27c6
+⟇	or with dot inside 	u+27c7	27c7
+⟈	reverse solidus preceding subset 	u+27c8	27c8
+⟉	superset preceding solidus 	u+27c9	27c9
+⟊	vertical bar with horizontal stroke 	u+27ca	27ca
+⟋	mathematical rising diagonal 	\diagup	27cb
+⟌	long division 	u+27cc	27cc
+⟍	mathematical falling diagonal 	\diagdown	27cd
+⟎	squared logical and 	box min	27ce
+⟏	squared logical or 	box max	27cf
+⟐	white diamond with centred dot 	u+27d0	27d0
+⟑	and with dot 	u+27d1	27d1
+⟒	element of opening upwards 	u+27d2	27d2
+⟓	lower right corner with dot 	pullback	27d3
+⟔	upper left corner with dot 	pushout	27d4
+⟕	left outer join 	u+27d5	27d5
+⟖	right outer join 	u+27d6	27d6
+⟗	full outer join 	u+27d7	27d7
+⟘	large up tack 	u+27d8	27d8
+⟙	large down tack 	u+27d9	27d9
+⟚	left and right double turnstile 	u+27da	27da
+⟛	left and right tack 	u+27db	27db
+⟜	left multimap 	u+27dc	27dc
+⟝	long right tack 	u+27dd	27dd
+⟞	long left tack 	u+27de	27de
+⟟	up tack with circle above 	radial component	27df
+⟠	lozenge divided by horizontal rule 	u+27e0	27e0
+⟡	white concave-sided diamond 	never (modal operator)	27e1
+⟢	white concave-sided diamond with leftwards tick 	was never (modal operator)	27e2
+⟣	white concave-sided diamond with rightwards tick 	will never be (modal operator)	27e3
+⟤	white square with leftwards tick 	was always (modal operator)	27e4
+⟥	white square with rightwards tick 	will always be (modal operator)	27e5
+⟦	mathematical left white square bracket 	z notation left bag bracket	27e6
+⟧	mathematical right white square bracket 	z notation right bag bracket	27e7
+⟨	mathematical left angle bracket 	bra, z notation left sequence bracket	27e8
+⟩	mathematical right angle bracket 	ket, z notation right sequence bracket	27e9
+⟪	mathematical left double angle bracket 	z notation left chevron bracket	27ea
+⟫	mathematical right double angle bracket 	z notation right chevron bracket	27eb
+⟬	mathematical left white tortoise shell bracket 	u+27ec	27ec
+⟭	mathematical right white tortoise shell bracket 	u+27ed	27ed
+⟮	mathematical left flattened parenthesis 	lgroup	27ee
+⟯	mathematical right flattened parenthesis 	rgroup	27ef

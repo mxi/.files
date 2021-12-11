@@ -1,0 +1,49 @@
+# env: xdg
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache" 
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_RUNTIME_DIR="$HOME/.local/run"
+
+# env: paths & programs
+IPATH="$PATH"
+IPATH="$HOME/.local/bin:$IPATH"
+IPATH="$HOME/script/dmenu:$IPATH"
+IPATH="$HOME/script/exe:$IPATH"
+
+export PATH="$IPATH"
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+
+export EDITOR='/usr/bin/nvim'
+export PDFVIEW='/usr/bin/zathura'
+export TERMINAL='/usr/local/bin/st'
+export PRINTF='/usr/bin/printf'
+export KILL='/usr/bin/kill'
+
+# env: re-route to CONFIG
+export XAUTHORITY="$XDG_DATA_HOME/X/Xauthority"
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/X/XCompose"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+# env: re-route to CACHE
+export LESSHISTFILE="$XDG_CACHE_HOME/lesshist"
+export CARGO_HOME="$HOME/.cache/cargo"
+
+# env: re-route to DATA
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+
+# env: other routes
+export SCHOOL_HOME="$HOME/doc/school"
+export SCRIPT_HOME="$HOME/script"
+
+
+# launch:
+# systemd userspace doesn't seem to properly start
+# the pulse audio daemon since the status says
+# active (running) but pulseaudio --check -v says
+# no daemon is running. For the time being I'll
+# just start it manually here.
+pulseaudio --check -v || pulseaudio --daemonize
+
+# start xserver
+startx
