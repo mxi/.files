@@ -8,6 +8,7 @@ packloadall
 set nu rnu
 set splitright splitbelow
 
+" generally acceptable tab settings, can be changed later.
 set autoindent
 set tabstop=4
 set softtabstop=4
@@ -15,6 +16,7 @@ set shiftwidth=4
 set noexpandtab
 
 set scrolloff=4
+set cursorline
 
 set listchars=tab:→\ ,eol:↲
 
@@ -71,7 +73,6 @@ colorscheme gruvbox
 
 " +--- autocmd ------------------------------------------------+
 function SetupForMarkdownLike()
-	
 endfunction
 
 function SetupForCLike()
@@ -86,12 +87,18 @@ function SetupForCLike()
 	" inoremap <buffer> '  ''<esc>i
 endfunction
 
+function SetupForAssemblyLike()
+endfunction
+
 augroup setup
 	autocmd!
+	" md languages
 	autocmd FileType markdown :call SetupForMarkdownLike()
+	" c family
 	autocmd FileType c,cpp :call SetupForCLike()
 	autocmd FileType glsl* :call SetupForCLike()
-	" add more c-family languages as needed
+	" asm family
+	autocmd FileType asm :call SetupForAssemblyLike()
 augroup END
 
 augroup general
