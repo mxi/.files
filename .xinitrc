@@ -5,8 +5,8 @@ setxkbmap -option compose:ralt
 xset s 120
 picom &
 dwmblocks &
-# feh --no-fehbg -z --bg-fill "$HOME/doc/photos/wallpapers/target/"
-feh --no-fehbg -z --bg-scale "$HOME/doc/photos/wallpapers/hahayes.png"
+# feh --no-fehbg -z --bg-fill "$HOME/doc/images/wallpapers/target/"
+feh --no-fehbg -z --bg-scale "$HOME/doc/images/wallpapers/hahayes.png"
 
 # daemons
 dunst &

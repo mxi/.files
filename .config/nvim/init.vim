@@ -77,7 +77,7 @@ endfunction
 
 function SetupForCLike()
 	set nowrap
-	set path=.,/usr/include/,/usr/local/include
+	set path=.,/usr/include/,/usr/include/opencv4,/usr/local/include
 	inoremap <buffer> {} {<enter>}<esc>O
 	nnoremap <buffer> <Leader>m :make<CR>
 	nnoremap <buffer> <Leader>M :!make<CR>
@@ -88,6 +88,7 @@ function SetupForCLike()
 endfunction
 
 function SetupForAssemblyLike()
+	set nowrap
 endfunction
 
 augroup setup

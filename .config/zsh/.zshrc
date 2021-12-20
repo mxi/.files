@@ -81,3 +81,20 @@ pdfmerge() {
 	/usr/bin/gs -dBATCH -dNOPAUSE -q \
 	            -sDEVICE=pdfwrite -sOutputFile="$OUT" $@
 }
+
+randaround() {
+	[ "$1" = "pad" ] && PAD=1 && shift || PAD=0
+	# user supplied side economics
+	CENTER=${1:?"Usage: randaround [pad] CENTER RADIUS N"}
+	RADIUS=${2:?"Usage: randaround [pad] CENTER RADIUS N"}
+	N=${3:?"Usage: randaround [pad] CENTER RADIUS N"}
+	# mathematical preparation
+	MIN=$((CENTER-RADIUS))
+	RANGE=$((2*RADIUS))
+	for x in $(shuf -i 0-$RANGE -n $N); do
+		y=$((x+MIN))
+		[ "$PAD" = "1" ]       && \
+			printf "%16d\n" $y || \
+			echo $y
+	done
+}
