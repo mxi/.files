@@ -1,6 +1,6 @@
 # env: general
-export PS1=$'\n\e[90m%n@%m \e[91m%~\e[90m\n❱\e[0m '
-export PS2=$'\e[90m❱\e[0m '
+export PS1=$'\n%{\e[90m%}%n@%m %{\e[91m%}%~%{\e[90m%}\n❱%{\e[0m%} '
+export PS2=$'%{\e[90m%}❱%{\e[0m%} '
 
 # env: other/obscure/idk
 export GPG_TTY=$(tty)

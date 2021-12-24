@@ -10,10 +10,11 @@ set splitright splitbelow
 
 " generally acceptable tab settings, can be changed later.
 set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 set noexpandtab
+set nowrap
 
 set scrolloff=4
 set cursorline
@@ -76,6 +77,10 @@ function SetupForMarkdownLike()
 endfunction
 
 function SetupForCLike()
+	set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+	set noexpandtab
 	set nowrap
 	set path=.,/usr/include/,/usr/include/opencv4,/usr/local/include
 	inoremap <buffer> {} {<enter>}<esc>O
