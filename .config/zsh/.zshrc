@@ -11,11 +11,13 @@ export GPG_TTY=$(tty)
 # alias: general
 alias e="$EDITOR"
 alias pdf="$PDFVIEW"
+alias ytdl="yt-dlp"
 alias ls="ls --color=auto"
 alias ll="ls -lAX"
 alias l="ll"
 alias llc="ll | wc -l"
 alias cls="clear && ll"
+alias clsm="cls && make"
 alias diff="diff --color=auto"
 alias dasm="objdump -d -M intel"
 alias cent='for x in {0..100}; do echo $x; done'
