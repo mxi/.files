@@ -11,7 +11,7 @@ export GPG_TTY=$(tty)
 # alias: general
 alias e="$EDITOR"
 alias pdf="$PDFVIEW"
-alias ytdl="yt-dlp"
+alias yt="yt-dlp"
 alias ls="ls --color=auto"
 alias ll="ls -lAX"
 alias l="ll"
