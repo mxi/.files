@@ -25,7 +25,6 @@ alias conname="nmcli con show --active | awk '\$1 != \"NAME\" { print(\$1); }'"
 alias background='feh --no-fehbg -z --bg-fill "$HOME/doc/photos/wallpapers/"'
 alias today="date '+%Y-%m-%d'"
 alias todaynice="date +'%A, %B %e, %Y'"
-alias todo="$EDITOR $HOME/doc/todo"
 
 alias killblocks="pidof dwmblocks | xargs kill -9"
 alias killpicom="pidof picom | xargs kill -9"

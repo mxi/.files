@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+import sys
+
+
+def expand233(byte):
+    return (byte >> 6, (byte >> 3) & 0x7, byte & 0x7)
+
+def main():
+    if len(sys.argv) <= 1:
+        sys.stderr.write('specify bytes in hex.\n')
+        return 1
+
+    chars = []
+    for arg in sys.argv[1:]:
+        chars.extend(arg)
+
+    while len(chars) >= 2:
+        bytestr = chars.pop(0) + chars.pop(0)
+        try:
+            a, b, c = expand233(int(bytestr, 16))
+            print(f'\nexpansion of {bytestr}:')
+            print(f'[decimal]: {a} {b} {c}')
+            print(f'[hex    ]: {a:02x} {b:02x} {c:02x}')
+            print(f'[binary ]: {a:02b} {b:03b} {c:03b}')
+        except ValueError:
+            sys.stderr.write(f'\ninvalid byte: {bytestr}\n')
+
+if __name__ == "__main__":
+    sys.exit(main())

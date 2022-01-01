@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$TERMINAL $EDITOR "$HOME/doc/todo"
