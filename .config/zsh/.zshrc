@@ -18,6 +18,8 @@ alias l="ll"
 alias llc="ll | wc -l"
 alias cls="clear && ll"
 alias clsm="cls && make"
+alias open="xdg-open"
+alias office="libreoffice"
 alias diff="diff --color=auto"
 alias dasm="objdump -d -M intel"
 alias cent='for x in {0..100}; do echo $x; done'
@@ -53,9 +55,13 @@ alias gs="git status"
 alias cdschool="cd $SCHOOL_HOME"
 alias cdagenda="cd $SCHOOL_HOME/agenda"
 
-alias cdds="cd $SCHOOL_HOME/deanza/ds"
-alias cdla="cd $SCHOOL_HOME/deanza/la"
+# cc
+alias cdds="cd $SCHOOL_HOME/deanza/data-structures"
+alias cdla="cd $SCHOOL_HOME/deanza/linear-algebra"
+alias cdix="cd $SCHOOL_HOME/deanza/x86-intro"
+alias cddm="cd $SCHOOL_HOME/deanza/discrete-math"
 
+# hs
 alias cdlit="cd $SCHOOL_HOME/fuhsd/lit"
 alias cdgov="cd $SCHOOL_HOME/fuhsd/gov"
 
