@@ -23,6 +23,7 @@ alias office="libreoffice"
 alias diff="diff --color=auto"
 alias dasm="objdump -d -M intel"
 alias cent='for x in {0..100}; do echo $x; done'
+alias delswap="rm -rf ~/.local/share/nvim/swap/"
 alias conname="nmcli con show --active | awk '\$1 != \"NAME\" { print(\$1); }'"
 alias background='feh --no-fehbg -z --bg-fill "$HOME/doc/photos/wallpapers/"'
 alias today="date '+%Y-%m-%d'"
@@ -88,6 +89,19 @@ pdfmerge() {
 	shift
 	/usr/bin/gs -dBATCH -dNOPAUSE -q \
 	            -sDEVICE=pdfwrite -sOutputFile="$OUT" $@
+}
+
+audioconcat() {
+	OUT=${1:?"audioconcat OUTPUT INPUT..."}
+	shift
+	OUTIN="$OUT.audioconcat-tmp.in"
+	for file in "$@"; do echo "file '$file'"; done > "$OUTIN"
+	ffmpeg -f concat \
+	       -safe 0 \
+	       -i "$OUTIN" \
+	       -c copy \
+	       "$OUT"
+	rm "$OUTIN"
 }
 
 randaround() {
