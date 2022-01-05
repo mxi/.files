@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+# some administrative
+PRINTF="/usr/bin/printf"
+DATE="/usr/bin/date"
+EDITOR=${EDITOR:-vim}
+
+JOURNAL_D="$HOME/doc/journal"
+DATE_STR="now"
+
+# User may optionally specify a date offset in days as the first argument.
+[ -n "$1" ] && DATE_STR="$DATE_STR $1 day"
+
+datetarget() {
+	$DATE --date="$DATE_STR" "$@"
+}
+
+export TARGET=$(datetarget +'%Y-%m-%d')
+export TARGET_NICE=$(datetarget +'%A, %B %e, %Y')
+JOURNAL="$JOURNAL_D/$TARGET"
+
+# make sure the agenda directory exists
+[ ! -d "$JOURNAL_D" ] && mkdir -p "$JOURNAL_D"
+
+# create a new journal if one does not exist for today:
+[ ! -e "$JOURNAL" ] && echo "$TARGET_NICE" > "$JOURNAL"
+
+$EDITOR "$JOURNAL"
