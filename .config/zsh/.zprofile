@@ -16,6 +16,7 @@ export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 export EDITOR='/usr/bin/nvim'
 export PDFVIEW='/usr/bin/zathura'
+export BROWSER='/usr/bin/firefox'
 export TERMINAL='/usr/local/bin/st'
 export PRINTF='/usr/bin/printf'
 export KILL='/usr/bin/kill'
