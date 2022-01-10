@@ -3,4 +3,4 @@
 
 TABLE="$SCRIPT_HOME/dmenu/data/font-awesome/seq.txt"
 
-dmenu < $TABLE | cut -d' ' -f1 | xclip -i -sel clip
+dmenu < $TABLE | cut -d' ' -f1 | tr -d '\n' | xclip -i -sel clip

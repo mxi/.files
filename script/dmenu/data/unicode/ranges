@@ -1,10 +1,16 @@
-ignore 1F600 1F64F -- emojis
-ignore  2200  22FF -- math operators
-ignore  27C0  27EF -- misc. math symbols A
-ignore  2190  21FF -- arrows
-ignore  2150  218F -- numbers
-ignore  2980  29FF -- misc. math symbols B
-ignore  2A00  2AFF -- sup. math symbols
-ignore 1D400 1D7FF -- alnum math symbols
-ignore 1F680 1F6FF -- transport and map emojis
-        2600  26FF -- misc. symbols (emojis)
+ignore	------ old ------
+ignore	1F600 1F64F -- emojis
+ignore	 2200  22FF -- math operators
+ignore	 27C0  27EF -- misc. math symbols A
+ignore	 2190  21FF -- arrows
+ignore	 2150  218F -- numbers
+ignore	 2980  29FF -- misc. math symbols B
+ignore	 2A00  2AFF -- sup. math symbols
+ignore	1D400 1D7FF -- alnum math symbols
+ignore	1F680 1F6FF -- transport and map emojis
+ignore	 2600  26FF -- misc. symbols (emojis)
+
+ignore	------ actually useful --------
+ignore	 2500  257F -- box drawing
+ignore	1F600 1F6FF -- most emojis
+	1F900 1F9FF -- emojis with hands
