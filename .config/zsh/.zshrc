@@ -65,6 +65,7 @@ alias cddm="cd $SCHOOL_HOME/deanza/discrete-math"
 # hs
 alias cdlit="cd $SCHOOL_HOME/fuhsd/lit"
 alias cdgov="cd $SCHOOL_HOME/fuhsd/gov"
+alias cdmicro="cd $SCHOOL_HOME/fuhsd/micro"
 
 
 # functions: general
