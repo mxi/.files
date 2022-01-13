@@ -51,6 +51,9 @@ alias config="/usr/bin/git --git-dir=$HOME/.df/ --work-tree=$HOME"
 alias cs="config status"
 alias gs="git status"
 
+# alias: cds
+alias cdvideo="cd $HOME/doc/video"
+alias cdaudio="cd $HOME/doc/audio"
 
 # alias: school
 alias cdschool="cd $SCHOOL_HOME"
