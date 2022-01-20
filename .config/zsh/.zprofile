@@ -34,6 +34,7 @@ export CARGO_HOME="$HOME/.cache/cargo"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # env: other routes
+export SCREENSHOT_DIR="$HOME/doc/images/screenshots"
 export SCHOOL_HOME="$HOME/doc/school"
 export SCRIPT_HOME="$HOME/script"
 
