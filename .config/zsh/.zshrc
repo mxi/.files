@@ -10,11 +10,12 @@ export GPG_TTY=$(tty)
 
 # alias: general
 alias e="$EDITOR"
+alias l="ll"
 alias pdf="$PDFVIEW"
 alias yt="yt-dlp"
 alias ls="ls --color=auto"
-alias ll="ls -lAX"
-alias l="ll"
+alias ll="ls -lAXBh"
+alias hd="hexdump -C"
 alias llc="ll | wc -l"
 alias cls="clear && ll"
 alias clsm="cls && make"

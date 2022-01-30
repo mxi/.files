@@ -78,6 +78,14 @@ colorscheme gruvbox
 function SetupForMarkdownLike()
 endfunction
 
+function SetupForLaTeX()
+	set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+	set wrap
+	nnoremap <buffer> <leader><enter> :w<CR>:!pdflatex "%"<CR>
+endfunction
+
 function SetupForCLike()
 	set tabstop=4
 	set softtabstop=4
@@ -102,13 +110,15 @@ endfunction
 
 augroup setup
 	autocmd!
-	" md languages
+	" markup languages
 	autocmd FileType markdown :call SetupForMarkdownLike()
+	autocmd FileType tex      :call SetupForLaTeX()
 	" c family
-	autocmd FileType c,cpp :call SetupForCLike()
-	autocmd FileType glsl* :call SetupForCLike()
+	autocmd FileType c        :call SetupForCLike()
+	autocmd FileType cpp      :call SetupForCLike()
+	autocmd FileType glsl*    :call SetupForCLike()
 	" asm family
-	autocmd FileType asm :call SetupForAssemblyLike()
+	autocmd FileType asm      :call SetupForAssemblyLike()
 augroup END
 
 augroup general
