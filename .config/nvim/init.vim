@@ -70,8 +70,12 @@ nnoremap <Leader>s :w<CR>
 
 " +--- theming ------------------------------------------------+
 set termguicolors
-set background=light
+set background=dark
 colorscheme gruvbox
+
+if 8 <= strftime("%H") && strftime("%H") <= 18
+	set background=light
+endif
 
 
 " +--- autocmd ------------------------------------------------+

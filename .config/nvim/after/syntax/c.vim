@@ -1,4 +1,4 @@
-syn match cTodo /@SECTION\((\w*):\)\?/
+syn match cTodo /@SECTION\((\w*)\)\?/
 
 syn match cTodo /@NOTE\((\w*):\)\?/
 syn match cTodo /@WARN\((\w*):\)\?/
