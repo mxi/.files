@@ -70,7 +70,7 @@ nnoremap <Leader>s :w<CR>
 
 " +--- theming ------------------------------------------------+
 set termguicolors
-set background=dark
+set background=light
 colorscheme gruvbox
 
 
@@ -95,6 +95,7 @@ function SetupForCLike()
 	set path=.,/usr/include/,/usr/include/opencv4,/usr/local/include
 	let c_no_bracket_error = 1
 	let c_no_curly_error = 1
+	inoremap <buffer> /* /*<space><space>*/<esc>hhi
 	inoremap <buffer> {} {<enter>}<esc>O
 	nnoremap <buffer> <Leader>m :make<CR>
 	nnoremap <buffer> <Leader>M :!make<CR>
