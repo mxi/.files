@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Original script courtesy of @bohlstry:
+# https://github.com/jonathanio/update-systemd-resolved/issues/59#issuecomment-465276476
+
+# I've added my own modification for the `up` case to additionally set the DNS Domain
+# property of the affected tunnel to "~." to route all DNS requests through it. This
+# at least works for one VPN at at time, not sure about multiple.
+
+# Process only TUN (i.e. VPN) devices!
+
+if [[ $1 == tun* ]]; then
+
+  case $2 in
+
+    up)
+      logger -t "check-dns-domain" "TUN up: $1"
+      # Remove from all but the current TUN interface the default domain search flag '~.'...
+      for device in $(nmcli -t device | cut -d: -f1 | sort | grep -vx "$1"); do
+        # Get current domain entries...
+        domain=$(resolvectl domain "$device" | cut -d: -f2 | sed -e 's/^\s//')
+        # Check for an '~.' entry (surrounded by spaces or at begin/end of string)...
+        if echo "$domain" | grep -qE '(^|\s)~\.(\s|$)'; then
+          # Remove '~.', trim whitespace...
+          domain=$(echo "$domain" | sed -E -e 's/(^|\s)~\.(\s|$)/ /g' -e 's/^\s+//' -e 's/\s+$//')
+          logger -t "check-dns-domain" "Setting domain for '$device': '$domain'"
+          if [ -z "$domain" ]; then
+            # Domain is now empty...
+            resolvectl domain "$device" ""
+          else
+            # Set new domain value(s). Hint: don't quote last argument, we need individual arguments...
+            resolvectl domain "$device" $domain
+          fi
+        fi
+      done
+      # @NOTE(max) I don't know how this will impact multiple VPN users—I'm not one of them, but
+      # I further need to set the DNS Domain property on my tunnel to "~." so all DNS requests
+      # will be routed through it.
+      domain=$(resolvectl domain "$1" | cut -d: -f2 | sed -e 's/^\s//')
+      # If there already is a domain, append to it
+      domain=${domain:+$domain }~.
+      # Set the new domains
+      resolvectl domain "$1" $domain
+    ;;
+
+    down)
+      logger -t "check-dns-domain" "TUN down: $1"
+      # Get device name of default route...
+      device=$(ip route ls | perl -ne 'do {print $1; last} if /^default\s.*\sdev\s(\S+)/')
+      # Get current domain entries...
+      domain=$(resolvectl domain "$device" | cut -d: -f2 | sed -e 's/^\s//')
+      # Append '~.', separated by space. If domain was empty, just set value (without space)...
+      domain=${domain:+$domain }~.
+      logger -t "check-dns-domain" "Setting domain for '$device': '$domain'"
+      # Set new domain value(s). Hint: don't quote last argument, we need individual arguments...
+      resolvectl domain "$device" $domain
+      ;;
+
+  esac
+
+fi
