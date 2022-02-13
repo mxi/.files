@@ -39,6 +39,12 @@ export SCREENSHOT_DIR="$HOME/doc/images/screenshots"
 export SCHOOL_HOME="$HOME/doc/school"
 export SCRIPT_HOME="$HOME/script"
 
+# dwm colors
+export DWM_CLR_STD='\x0b'
+export DWM_CLR_WHT='\x0c'
+export DWM_CLR_RED='\x0d'
+export DWM_CLR_GRN='\x0e'
+export DWM_CLR_BLU='\x0f'
 
 # launch:
 # systemd userspace doesn't seem to properly start
