@@ -49,7 +49,7 @@ alias resource="source $XDG_CONFIG_HOME/zsh/.zshrc"
 alias zreprof="source $XDG_CONFIG_HOME/zsh/.zprofile"
 alias vact="source ./venv/bin/activate"
 
-alias config="/usr/bin/git --git-dir=$HOME/.df/ --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME"
 alias cs="config status"
 alias gs="git status"
 
