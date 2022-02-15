@@ -73,7 +73,7 @@ set termguicolors
 set background=dark
 colorscheme gruvbox
 
-if 8 <= strftime("%H") && strftime("%H") <= 18
+if 8 <= strftime("%H") && strftime("%H") <= 16
 	set background=light
 endif
 
@@ -116,14 +116,14 @@ endfunction
 augroup setup
 	autocmd!
 	" markup languages
-	autocmd FileType markdown :call SetupForMarkdownLike()
-	autocmd FileType tex      :call SetupForLaTeX()
+	autocmd FileType markdown   :call SetupForMarkdownLike()
+	autocmd FileType tex        :call SetupForLaTeX()
 	" c family
-	autocmd FileType c        :call SetupForCLike()
-	autocmd FileType cpp      :call SetupForCLike()
-	autocmd FileType glsl*    :call SetupForCLike()
+	autocmd FileType c          :call SetupForCLike()
+	autocmd FileType cpp        :call SetupForCLike()
+	autocmd FileType glsl*      :call SetupForCLike()
 	" asm family
-	autocmd FileType asm      :call SetupForAssemblyLike()
+	autocmd FileType asm        :call SetupForAssemblyLike()
 augroup END
 
 augroup general
