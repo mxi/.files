@@ -126,3 +126,11 @@ randaround() {
 			echo $y
 	done
 }
+
+lspath() {
+	for directory in $(echo "$PATH" | tr ':' '\n'); do
+		for file in $(ls "$directory"); do
+			echo "$directory/$file"
+		done
+	done
+}

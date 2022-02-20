@@ -5,7 +5,7 @@ setxkbmap -option compose:ralt
 xset s 120
 picom &
 dwmblocks &
-wallp
+wallp default
 
 # daemons
 dunst &

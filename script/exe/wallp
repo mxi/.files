@@ -1,3 +1,6 @@
 #!/bin/sh
 
-feh --no-fehbg -z --bg-center "$TARGET_WALLPAPERS_DIR"
+
+TARGET=${1:-default}
+
+feh --no-fehbg -z --bg-center "$WALLPAPERS_DIR/$TARGET"
