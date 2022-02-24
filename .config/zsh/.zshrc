@@ -17,6 +17,7 @@ alias yt="yt-dlp"
 alias ls="ls --color=auto"
 alias ll="ls -lAXBh"
 alias hd="hexdump -C"
+alias gpr="grep -PR"
 alias llc="ll | wc -l"
 alias cls="clear && ll"
 alias clsm="cls && make"
@@ -51,6 +52,8 @@ alias vact="source ./venv/bin/activate"
 
 alias config="/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME"
 alias cs="config status"
+
+alias glo="git log --oneline"
 alias gs="git status"
 
 # alias: cds
