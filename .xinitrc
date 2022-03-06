@@ -2,7 +2,7 @@
 setxkbmap -option compose:ralt
 
 # looks and stuff
-xset s 120
+xset s 3600
 picom &
 dwmblocks &
 wallp default

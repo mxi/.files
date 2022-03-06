@@ -8,5 +8,6 @@ syn match cTodo /@GLOBAL/
 syn match cTodo /@TUNABLE/
 syn match cTodo /@SPEED/
 syn match cTodo /@LEAK/
+syn match cTodo /@TEMP/
 
 syn keyword cType u8 u16 u32 u64 s8 s16 s32 s64

@@ -101,7 +101,7 @@ function SetupForCLike()
 	let c_no_curly_error = 1
 	inoremap <buffer> /* /*<space><space>*/<esc>hhi
 	inoremap <buffer> {} {<enter>}<esc>O
-	nnoremap <buffer> <Leader>m :make<CR>
+	nnoremap <buffer> <Leader>m :make<CR><Enter>:cnext<CR>:cprev<CR>
 	nnoremap <buffer> <Leader>M :!make<CR>
 	" make more intelligent functions for
 	" these:

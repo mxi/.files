@@ -47,12 +47,14 @@ export DWM_CLR_GRN='\x0e'
 export DWM_CLR_BLU='\x0f'
 
 # launch:
-# systemd userspace doesn't seem to properly start
-# the pulse audio daemon since the status says
-# active (running) but pulseaudio --check -v says
-# no daemon is running. For the time being I'll
-# just start it manually here.
+# systemd userspace doesn't seem to properly start the pulse audio 
+# daemon since the status says active (running) but pulseaudio --check 
+# -v says no daemon is running. For the time being I'll just start it 
+# manually here.
 pulseaudio --check -v || pulseaudio --daemonize
+
+# NetworkManager sucks
+sudo systemctl restart NetworkManager
 
 # start xserver
 startx
