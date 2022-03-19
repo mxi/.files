@@ -71,7 +71,7 @@ nnoremap <Leader>s :w<CR>
 " +--- theming ------------------------------------------------+
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme fogbell 
 
 if 8 <= strftime("%H") && strftime("%H") <= 16
 	set background=light
