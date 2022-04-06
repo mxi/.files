@@ -73,7 +73,7 @@ set termguicolors
 set background=dark
 colorscheme sunbather 
 
-if 8 <= strftime("%H") && strftime("%H") <= 16
+if 7 <= strftime("%H") && strftime("%H") <= 20
 	set background=light
 endif
 
