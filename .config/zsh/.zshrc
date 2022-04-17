@@ -23,14 +23,15 @@ alias llc="ll | wc -l"
 alias cls="clear && ll"
 alias clsm="cls && make"
 alias open="xdg-open"
-alias office="libreoffice"
 alias diff="diff --color=auto"
 alias dasm="objdump -d -M intel"
 alias cent='for x in {0..100}; do echo $x; done'
+alias slog='journalctl -r'
+alias today="date '+%Y-%m-%d'"
+alias office="libreoffice"
 alias delswap="rm -rf ~/.local/share/nvim/swap/"
 alias conname="nmcli con show --active | awk '\$1 != \"NAME\" { print(\$1); }'"
 alias background='feh --no-fehbg -z --bg-fill "$HOME/doc/photos/wallpapers/"'
-alias today="date '+%Y-%m-%d'"
 alias todaynice="date +'%A, %B %e, %Y'"
 
 alias killblocks="pidof dwmblocks | xargs kill -9"

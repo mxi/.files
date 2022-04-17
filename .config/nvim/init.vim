@@ -91,7 +91,7 @@ function SetupForLaTeX()
 endfunction
 
 function SetupForCLike()
-	set cino=(0
+	set cino=(0,l1
 	set tabstop=4
 	set softtabstop=4
 	set shiftwidth=4
