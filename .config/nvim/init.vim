@@ -71,11 +71,7 @@ nnoremap <Leader>s :w<CR>
 " +--- theming ------------------------------------------------+
 set termguicolors
 set background=dark
-colorscheme sunbather 
-
-if 7 <= strftime("%H") && strftime("%H") <= 20
-	set background=light
-endif
+colorscheme simple-dark
 
 
 " +--- autocmd ------------------------------------------------+
@@ -91,7 +87,7 @@ function SetupForLaTeX()
 endfunction
 
 function SetupForCLike()
-	set cino=(0,l1
+	set cino=(0,l1,:0
 	set tabstop=4
 	set softtabstop=4
 	set shiftwidth=4
