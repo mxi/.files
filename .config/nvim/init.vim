@@ -71,7 +71,7 @@ nnoremap <Leader>s :w<CR>
 " +--- theming ------------------------------------------------+
 set termguicolors
 set background=dark
-colorscheme simple-dark
+colorscheme suckless-dark
 
 
 " +--- autocmd ------------------------------------------------+
