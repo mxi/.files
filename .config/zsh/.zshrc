@@ -65,6 +65,7 @@ alias cdaudio="cd $HOME/doc/audio"
 # alias: school
 alias cdschool="cd $SCHOOL_HOME"
 alias cdagenda="cd $SCHOOL_HOME/agenda"
+alias cdra="cd $SCHOOL_HOME/real-analysis"
 
 # cc
 alias cdds="cd $SCHOOL_HOME/deanza/data-structures"

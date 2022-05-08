@@ -15,6 +15,7 @@ export PATH="$IPATH"
 export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 export EDITOR='/usr/bin/nvim'
+export MANPAGER='/usr/bin/nvim +"Man!" -o -'
 export PDFVIEW='/usr/bin/zathura'
 export BROWSER='/usr/bin/firefox'
 export TERMINAL='/usr/local/bin/st'
