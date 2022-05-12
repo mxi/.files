@@ -34,6 +34,9 @@ alias conname="nmcli con show --active | awk '\$1 != \"NAME\" { print(\$1); }'"
 alias background='feh --no-fehbg -z --bg-fill "$HOME/doc/photos/wallpapers/"'
 alias todaynice="date +'%A, %B %e, %Y'"
 
+alias memcheck="valgrind --tool=memcheck"
+alias callgrind="valgrind --tool=callgrind"
+
 alias killblocks="pidof dwmblocks | xargs kill -9"
 alias killpicom="pidof picom | xargs kill -9"
 
