@@ -22,6 +22,7 @@ alias gpr="grep -PRn"
 alias llc="ll | wc -l"
 alias cls="clear && ll"
 alias clsm="cls && make"
+alias make="make -j8"
 alias open="xdg-open"
 alias diff="diff --color=auto"
 alias dasm="objdump -d -M intel"
@@ -64,22 +65,20 @@ alias gs="git status"
 # alias: cds
 alias cdvideo="cd $HOME/doc/video"
 alias cdaudio="cd $HOME/doc/audio"
+alias cdimage="cd $HOME/doc/images/"
 
-# alias: school
-alias cdschool="cd $SCHOOL_HOME"
-alias cdagenda="cd $SCHOOL_HOME/agenda"
-alias cdra="cd $SCHOOL_HOME/real-analysis"
+alias cdedu="cd $EDUCATION_HOME"
+alias cdra="cd $EDUCATION_HOME/real-analysis"
+alias cdlatin="cd $EDUCATION_HOME/lang/latin/"
 
-# cc
-alias cdds="cd $SCHOOL_HOME/deanza/data-structures"
-alias cdla="cd $SCHOOL_HOME/deanza/linear-algebra"
-alias cdix="cd $SCHOOL_HOME/deanza/x86-intro"
-alias cddm="cd $SCHOOL_HOME/deanza/discrete-math"
+alias cdds="cd $EDUCATION_HOME/deanza/data-structures"
+alias cdla="cd $EDUCATION_HOME/deanza/linear-algebra"
+alias cdix="cd $EDUCATION_HOME/deanza/x86-intro"
+alias cddm="cd $EDUCATION_HOME/deanza/discrete-math"
 
-# hs
-alias cdlit="cd $SCHOOL_HOME/fuhsd/lit"
-alias cdgov="cd $SCHOOL_HOME/fuhsd/gov"
-alias cdmicro="cd $SCHOOL_HOME/fuhsd/micro"
+alias cdlit="cd $EDUCATION_HOME/fuhsd/lit"
+alias cdgov="cd $EDUCATION_HOME/fuhsd/gov"
+alias cdmicro="cd $EDUCATION_HOME/fuhsd/micro"
 
 
 # functions: general

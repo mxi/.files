@@ -12,6 +12,7 @@ IPATH="$HOME/script/dmenu:$IPATH"
 IPATH="$HOME/script/exe:$IPATH"
 
 export PATH="$IPATH"
+export PYTHONPATH="$PYTHONPATH:$HOME/code/py/"
 export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 export EDITOR='/usr/bin/nvim'
@@ -36,8 +37,8 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # env: other routes
 export WALLPAPERS_DIR="$HOME/doc/images/wallpapers/"
-export SCREENSHOT_DIR="$HOME/doc/images/screenshots"
-export SCHOOL_HOME="$HOME/doc/school"
+export SCREENSHOT_DIR="$HOME/doc/images/screenshots/"
+export EDUCATION_HOME="$HOME/doc/edu/"
 export SCRIPT_HOME="$HOME/script"
 
 # dwm colors
