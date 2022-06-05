@@ -5,9 +5,6 @@ export PS2=$'%{\e[90m%}❱%{\e[0m%} '
 # env: other/obscure/idk
 export GPG_TTY=$(tty)
 
-# all other envs in this script are part of .zprofile
-
-
 # alias: general
 alias e="$EDITOR"
 alias l="ll"
@@ -142,3 +139,6 @@ lspath() {
 		done
 	done
 }
+
+# Notes for my future self:
+# seq - generate ordered numbers

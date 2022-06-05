@@ -1,13 +1,9 @@
-syn match cTodo /@SECTION\((\w*)\)\?/
-
-syn match cTodo /@NOTE\((\w*)\)\?/
-syn match cTodo /@WARN\((\w*)\)\?/
-
-syn match cTodo /@TODO/
-syn match cTodo /@GLOBAL/
-syn match cTodo /@TUNABLE/
-syn match cTodo /@SPEED/
-syn match cTodo /@LEAK/
-syn match cTodo /@TEMP/
+syn match cTodo /@togo/
+syn match cTodo /@note/
+syn match cTodo /@global/
+syn match cTodo /@tunable/
+syn match cTodo /@speed/
+syn match cTodo /@leak/
+syn match cTodo /@temp/
 
 syn keyword cType u8 u16 u32 u64 s8 s16 s32 s64 f32 f64
