@@ -71,7 +71,11 @@ nnoremap <Leader>s :w<CR>
 " +--- theming ------------------------------------------------+
 set termguicolors
 set background=dark
-colorscheme suckless-dark
+
+if 6 <= strftime("%H") <= 19
+	set background=light
+endif
+colorscheme mvk
 
 
 " +--- autocmd ------------------------------------------------+
