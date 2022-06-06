@@ -65,13 +65,18 @@ nnoremap <Leader>wK <C-W>K
 nnoremap <Leader>wL <C-W>L
 
 " misc
+function s:syntax_stack()
+	if !exists("*synstack") | return | endif
+	echo map(synstack(line("."), col(".")), "synIDattr(v:val, 'name')")
+endfunction
+
+nnoremap <Leader>c :call <SID>syntax_stack()<CR>
 nnoremap <Leader>H :set hls!<CR>
 nnoremap <Leader>W :wa<CR>
 nnoremap <Leader>U viwU<esc>
 nnoremap <Leader>u viwu<esc>
 nnoremap <Leader>R :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <Leader>N :Ntree<CR>
-
 nnoremap <Leader>s :w<CR>
 " }}}
 " Autocmd {{{
