@@ -28,7 +28,7 @@ if 6 <= s:hour && s:hour <= 19
 	set background=light
 endif
 
-colorscheme mvk
+colorscheme decoldest
 " }}}
 " Bindings {{{
 let mapleader=' '

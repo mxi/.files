@@ -29,7 +29,7 @@ alias today="date '+%Y-%m-%d'"
 alias office="libreoffice"
 alias delswap="rm -rf ~/.local/share/nvim/swap/"
 alias conname="nmcli con show --active | awk '\$1 != \"NAME\" { print(\$1); }'"
-alias background='feh --no-fehbg -z --bg-fill "$HOME/doc/photos/wallpapers/"'
+alias background='feh --no-fehbg -z --bg-fill "$HOME/doc/images/wallpapers/target/"'
 alias todaynice="date +'%A, %B %e, %Y'"
 
 alias memcheck="valgrind --tool=memcheck"
@@ -141,4 +141,9 @@ lspath() {
 }
 
 # Notes for my future self:
+#
+# COREUTILS
 # seq - generate ordered numbers
+#
+# MAGICK
+# xc - canvas pseudo-image
