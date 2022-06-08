@@ -27,6 +27,8 @@ export KILL='/usr/bin/kill'
 export XAUTHORITY="$XDG_DATA_HOME/X/Xauthority"
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/X/XCompose"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 # env: re-route to CACHE
 export LESSHISTFILE="$XDG_CACHE_HOME/lesshist"
