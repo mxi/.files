@@ -8,8 +8,7 @@ export XDG_RUNTIME_DIR="$HOME/.local/run"
 # env: paths & programs
 IPATH="$PATH"
 IPATH="$HOME/.local/bin:$IPATH"
-IPATH="$HOME/script/dmenu:$IPATH"
-IPATH="$HOME/script/exe:$IPATH"
+IPATH="$HOME/code/sh:$IPATH"
 
 export PATH="$IPATH"
 export PYTHONPATH="$PYTHONPATH:$HOME/code/py/"
@@ -24,8 +23,8 @@ export PRINTF='/usr/bin/printf'
 export KILL='/usr/bin/kill'
 
 # env: re-route to CONFIG
-export XAUTHORITY="$XDG_DATA_HOME/X/Xauthority"
-export XCOMPOSEFILE="$XDG_CONFIG_HOME/X/XCompose"
+export XAUTHORITY="$XDG_DATA_HOME/Xauthority"
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/XCompose"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
@@ -41,7 +40,7 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export WALLPAPERS_DIR="$HOME/doc/images/wallpapers/"
 export SCREENSHOT_DIR="$HOME/doc/images/screenshots/"
 export EDUCATION_HOME="$HOME/doc/edu/"
-export SCRIPT_HOME="$HOME/script"
+export SCRIPT_HOME="$HOME/code/sh"
 
 # dwm colors
 export DWM_CLR_STD='\x0b'

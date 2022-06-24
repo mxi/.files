@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PERCENT=$("$HOME/script/exe/brightness-get.sh")
+PERCENT=$("$SCRIPT_HOME/brightness-get.sh")
 
 THR_DIM=25
 ICO_DIM=''
