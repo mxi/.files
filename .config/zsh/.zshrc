@@ -7,13 +7,13 @@ export GPG_TTY=$(tty)
 
 # alias: general
 alias e="$EDITOR"
-alias l="ll"
+alias l="ls"
 alias bt="bluetoothctl"
 alias cm="cls && make"
 alias pdf="$PDFVIEW"
 alias yt="yt-dlp"
-alias ls="ls --color=auto"
-alias ll="ls -lAXBh"
+alias ls="ls -lAh --group-directories-first --color=auto"
+alias ll="ls -lAXh --group-directories-first --color=auto"
 alias hd="hexdump -C"
 alias nnn="nnn -e"
 alias gpr="grep -PRn"
