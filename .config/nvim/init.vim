@@ -104,6 +104,8 @@ function s:setup_c()
 	let &path ..= "/usr/local/include,"
 	let c_no_bracket_error = 1
 	let c_no_curly_error = 1
+	" stupid hack to make no_*_error above work in .c sources
+	set filetype=cpp
 	inoremap <buffer> {} {<enter>}<esc>O
 	nnoremap <buffer> <Leader>m :make<CR><Enter>:cnext<CR>:cprev<CR>
 	nnoremap <buffer> <Leader>M :!make<CR>

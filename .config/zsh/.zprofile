@@ -50,6 +50,9 @@ export DWM_CLR_RED='\x0d'
 export DWM_CLR_GRN='\x0e'
 export DWM_CLR_BLU='\x0f'
 
+# nnn
+export NNN_COLORS="#fffcf9f6"
+
 # launch:
 # systemd userspace doesn't seem to properly start the pulse audio 
 # daemon since the status says active (running) but pulseaudio --check 
