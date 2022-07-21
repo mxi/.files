@@ -3,7 +3,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache" 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_RUNTIME_DIR="$HOME/.local/run"
+export XDG_RUNTIME_DIR="/run/user/$UID"
 
 # env: paths & programs
 IPATH="$PATH"
@@ -23,7 +23,7 @@ export PRINTF='/usr/bin/printf'
 export KILL='/usr/bin/kill'
 
 # env: re-route to CONFIG
-export XAUTHORITY="$XDG_DATA_HOME/Xauthority"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/XCompose"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
@@ -37,9 +37,9 @@ export CARGO_HOME="$HOME/.cache/cargo"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # env: other routes
-export WALLPAPERS_DIR="$HOME/doc/images/wallpapers/"
-export SCREENSHOT_DIR="$HOME/doc/images/screenshots/"
-export EDUCATION_HOME="$HOME/doc/edu/"
+export WALLPAPERS_DIR="$HOME/image/wallpapers/"
+export SCREENSHOT_DIR="$HOME/image/screenshots/"
+export EDUCATION_HOME="$HOME/edu/"
 export SCRIPT_HOME="$HOME/code/sh"
 
 # dwm colors
@@ -52,15 +52,7 @@ export DWM_CLR_BLU='\x0f'
 # nnn
 export NNN_COLORS="#fffcf9f6"
 
-# launch:
-# systemd userspace doesn't seem to properly start the pulse audio 
-# daemon since the status says active (running) but pulseaudio --check 
-# -v says no daemon is running. For the time being I'll just start it 
-# manually here.
-pulseaudio --check -v || pulseaudio --daemonize
-
 # NetworkManager sucks
-sudo systemctl restart NetworkManager
+# sudo systemctl restart NetworkManager
 
-# start xserver
 startx
