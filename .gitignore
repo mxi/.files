@@ -7,6 +7,14 @@
 !.config/XCompose/**/*
 !.config/zsh/
 !.config/zsh/**/*
+!.config/keyd.conf
+!.config/mimeapps.list
+!.config/wgetrc
+
+!.local/
+!.local/share/
+!.local/share/applications/
+!.local/share/applications/**/*
 
 !bin/
 !bin/*
