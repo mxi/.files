@@ -1,0 +1,33 @@
+<Multi_key> <g> <G>     : "Γ" # Gamma
+<Multi_key> <g> <D>     : "Δ" # Delta
+<Multi_key> <g> <T>     : "Θ" # Theta
+<Multi_key> <g> <L>     : "Λ" # Lambda
+<Multi_key> <g> <X>     : "Ξ" # Xi
+<Multi_key> <g> <P>     : "Π" # Pi
+<Multi_key> <g> <S> <S> : "Σ" # Sigma
+<Multi_key> <g> <F>     : "Φ" # Phi
+<Multi_key> <g> <S> <P> : "Ψ" # Psi
+<Multi_key> <g> <O>     : "Ω" # Omega
+<Multi_key> <g> <a>     : "α" # alpha
+<Multi_key> <g> <b>     : "β" # beta
+<Multi_key> <g> <g>     : "γ" # gamma
+<Multi_key> <g> <d>     : "δ" # delta
+<Multi_key> <g> <e>     : "ε" # epsilon
+<Multi_key> <g> <z>     : "ζ" # zeta
+<Multi_key> <g> <i> <e> : "η" # eta
+<Multi_key> <g> <t> <o> : "θ" # theta
+<Multi_key> <g> <i> <i> : "ι" # iota
+<Multi_key> <g> <k>     : "κ" # kappa
+<Multi_key> <g> <l>     : "λ" # lambda
+<Multi_key> <g> <m>     : "μ" # mu
+<Multi_key> <g> <n>     : "ν" # nu
+<Multi_key> <g> <x>     : "ξ" # xi
+<Multi_key> <g> <p>     : "π" # pi
+<Multi_key> <g> <r>     : "ρ" # rho
+<Multi_key> <g> <s> <s> : "σ" # sigma
+<Multi_key> <g> <t> <t> : "τ" # tau
+<Multi_key> <g> <u>     : "υ" # upsilon
+<Multi_key> <g> <f>     : "φ" # phi
+<Multi_key> <g> <c>     : "χ" # chi
+<Multi_key> <g> <s> <p> : "ψ" # psi
+<Multi_key> <g> <o>     : "ω" # omega

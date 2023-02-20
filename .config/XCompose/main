@@ -1,0 +1,3 @@
+include "%L"
+include "%H/.config/XCompose/greek"
+include "%H/.config/XCompose/longemoji"

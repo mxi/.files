@@ -3,6 +3,8 @@
 !.config/
 !.config/nvim/
 !.config/nvim/**/*
+!.config/XCompose/
+!.config/XCompose/**/*
 !.config/zsh/
 !.config/zsh/**/*
 
