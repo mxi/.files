@@ -1,0 +1,12 @@
+*
+
+!.config/
+!.config/zsh/
+!.config/zsh/*
+
+!bin/
+!bin/*
+
+!.gitignore
+!.xinitrc
+!.zshenv
