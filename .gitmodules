@@ -1,0 +1,30 @@
+[submodule ".config/nvim/pack/plugin/start/vim-gutentags"]
+	path = .config/nvim/pack/plugin/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule ".config/nvim/pack/plugin/start/supertab"]
+	path = .config/nvim/pack/plugin/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule ".config/nvim/pack/color/start/decoldest"]
+	path = .config/nvim/pack/color/start/decoldest
+	url = https://github.com/mxi/decoldest.vim
+[submodule ".config/nvim/pack/color/start/suckless-dark"]
+	path = .config/nvim/pack/color/start/suckless-dark
+	url = https://github.com/tek256/simple-dark
+[submodule ".config/nvim/pack/color/start/fogbell.vim"]
+	path = .config/nvim/pack/color/start/fogbell.vim
+	url = https://github.com/jaredgorski/fogbell.vim
+[submodule ".config/nvim/pack/color/start/vim-colors-off"]
+	path = .config/nvim/pack/color/start/vim-colors-off
+	url = https://github.com/pbrisbin/vim-colors-off
+[submodule ".config/nvim/pack/color/start/gruvbox"]
+	path = .config/nvim/pack/color/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule ".config/nvim/pack/color/start/vim-colors-paramount"]
+	path = .config/nvim/pack/color/start/vim-colors-paramount
+	url = https://github.com/owickstrom/vim-colors-paramount
+[submodule ".config/nvim/pack/color/start/vim-sunbather"]
+	path = .config/nvim/pack/color/start/vim-sunbather
+	url = https://github.com/nikolvs/vim-sunbather
+[submodule ".config/nvim/pack/syntax/start/glsl.vim"]
+	path = .config/nvim/pack/syntax/start/glsl.vim
+	url = https://github.com/beyondmarc/glsl.vim
