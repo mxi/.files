@@ -122,7 +122,7 @@ texdocm() {
 }
 
 copyscreenshots() {
-  sxiv -t -o $SCREENSHOT_DIR | xargs cp -t ${1:-.}
+  sxiv -t -o ~/image/screenshot/ | xargs cp -t ${1:-.}
 }
 
 sensitivity() {

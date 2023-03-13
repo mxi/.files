@@ -1,24 +1,40 @@
 *
 
+# ~/.config {{{
 !.config/
+
 !.config/nvim/
 !.config/nvim/**/*
+
 !.config/XCompose/
 !.config/XCompose/**/*
+
+!.config/zathura
+!.config/zathura/**
+
 !.config/zsh/
 !.config/zsh/**/*
-!.config/keyd.conf
+
 !.config/mimeapps.list
 !.config/wgetrc
+# }}} ~/.config
 
+# ~/.local {{{
 !.local/
 !.local/share/
 !.local/share/applications/
 !.local/share/applications/**/*
+# }}} ~/.local
 
+# ~/bin {{{
 !bin/
 !bin/*
+# }}} ~/bin
 
+# ~ {{{
 !.gitignore
 !.xinitrc
 !.zshenv
+# }}} ~
+
+# vi: ft=conf cc=80 fdm=marker

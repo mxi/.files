@@ -17,35 +17,39 @@ alias suspend="systemctl suspend"
 alias reboot="systemctl reboot"
 alias logout="loginctl terminate-session ''"
 
-# misc. aliases
-alias eprof="$EDITOR $XDG_CONFIG_HOME/zsh/.zprofile"
-alias erc="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
-alias envim="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+# quicksource / quickedit
 alias ealac="$EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml"
 alias eawesome="$EDITOR $XDG_CONFIG_HOME/awesome/rc.lua"
-alias exrc="$EDITOR $HOME/.xinitrc"
 alias ecompose="$EDITOR $XCOMPOSEFILE"
+alias envim="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+alias eprof="$EDITOR $XDG_CONFIG_HOME/zsh/.zprofile"
+alias eprofp="$EDITOR $XDG_CONFIG_HOME/zsh/.zprofile_private"
+alias erc="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
+alias ercfn="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_functions"
+alias ercp="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_private"
+alias exrc="$EDITOR $HOME/.xinitrc"
+alias ezathura="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
 alias reprofile="source $XDG_CONFIG_HOME/zsh/.zprofile"
 alias resource="source $XDG_CONFIG_HOME/zsh/.zshrc"
 
-# date alises for dated directories
+# dates
 alias day="date +'%Y%m%d'"
 alias now="date +'%Y%m%d-%H%M%S'"
 
 # cd aliases
 alias cdconf="cd $XDG_CONFIG_HOME"
 alias cddoc="cd ~/doc/"
+alias cdmath="cd ~/doc/text/math"
+alias cdtech="cd ~/doc/text/tech"
 alias cdedu="cd ~/edu/"
 alias cdimage="cd ~/image"
-alias cdsrc="cd ~/src/"
+alias cdsrc="cd ~/src"
 alias cdvideo="cd ~/video"
 alias cdvm="cd ~/vm"
 
-alias cdtech="cd ~/doc/text/tech"
-alias cdmath="cd ~/doc/text/math"
-
 # miscellaneous aliases
 alias cls="clear && l"
+alias clm="clear && make"
 alias delswap="rm -irf $HOME/.local/state/nvim/swap/*"
 alias diff="diff -u --color=auto"
 alias e="$EDITOR"

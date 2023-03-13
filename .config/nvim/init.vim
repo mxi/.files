@@ -81,6 +81,11 @@ function! SyntaxStack()
   echo map(synstack(line("."), col(".")), "synIDattr(v:val, 'name')")
 endfunction
 
+function! EchoLine(msg)
+  echon printf("\<cr>%*s", v:echospace, "")
+  echon printf("\<cr>%s", a:msg)
+endfunction
+
 function! PairOf(symbol)
   if !exists("SymbolPairTable")
     " forward table
@@ -105,32 +110,37 @@ function! SelectionOf(mode)
   let [rs, re] = a:mode == "char" ? ["'[", "']"] : ["'<", "'>"]
   let [sl, sc] = getcharpos(rs)[1:2]
   let [el, ec] = getcharpos(re)[1:2]
-  return [ sl, sc, el, ec ]
+  return [sl, sc, el, ec]
 endfunction
 
 " tiny version of surround.vim
-function! OpSurround(mode)
-  echo printf("%d %d", v:count, v:count1)
-  let x = getcharstr()
+function! Surround(mode)
+  call EchoLine("surround with: ") | let x = getcharstr()
   if x == "\<esc>" || x == "\<c-c>"
-    return
+    call EchoLine(":(") | return
   endif
   let [x, y] = PairOf(x)
-  let [ sl, sc, el, ec ] = SelectionOf(a:mode)
-  if a:mode == "line" || a:mode == "V"
+  let [sl, sc, el, ec] = SelectionOf(a:mode)
+  if a:mode == "V"           " line-wise
     call append(el, y)
     call append(sl-1, x)
-  elseif a:mode == "block" || a:mode == "\<c-v>"
-    silent execute sl..','..el..'s/$\|\%>'..ec..'c/\=y/ | norm! ``'
-    silent execute sl..','..el..'s/$\|\%'..sc..'c/\=x/ | norm! ``'
-  else
-    silent execute el..'s/$\|\%>'..ec..'c/\=y/ | norm! ``'
-    silent execute sl..'s/$\|\%'..sc..'c/\=x/ | norm! ``'
+  elseif a:mode == "\<c-v>"  " block-wise
+    let [_, cl, cc, _, _] = getcurpos()
+    echo cl cc
+    " for l in range(sl, el)
+
+    " endfor
+    " silent execute sl..','..el..'s/$\|\%>'..ec..'c/\=y/ | norm! ``'
+    " silent execute sl..','..el..'s/$\|\%'..sc..'c/\=x/ | norm! ``'
+  else                       " character-wise
+    silent! execute el..'s/$\|\%>'..ec..'c/\=y/ | norm! ``'
+    silent! execute sl..'s/$\|\%'..sc..'c/\=x/ | norm! ``'
   endif
+  " call EchoLine(":)")
 endfunction
 
 " inverse of OpSurround
-function! OpTrim(mode)
+function! Trim(mode)
   let x = getcharstr()
   if x =~ "\<esc>" || x =~ "\<c-c>"
     return
@@ -181,10 +191,12 @@ nnoremap <leader>P m`viw<esc>g`<~g``
 nnoremap <leader>U m`viwU<esc>g``
 nnoremap <leader>u m`viwu<esc>g``
 vnoremap <leader>== :'<,'>!column -t -s = -o =<cr>
-nnoremap s :set opfunc=OpSurround<cr>g@
-vnoremap s :<c-u>call OpSurround(visualmode())<cr>
-nnoremap t :set opfunc=OpTrim<cr>g@
-vnoremap t :<c-u>call OpTrim(visualmode())<cr>
+" hijack `s` for additional operators/commands/etc.
+noremap s <nop>
+nnoremap ss :set opfunc=Surround<cr>g@
+vnoremap ss :<c-u>call Surround(visualmode())<cr>
+nnoremap st :set opfunc=Trim<cr>g@
+vnoremap st :<c-u>call Trim(visualmode())<cr>
 " buffer movement 
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
@@ -232,12 +244,21 @@ nnoremap <leader>c :VimCalc<Space>
 " Autocmd (Setup) {{{
 augroup Setup | autocmd!
 
+function! s:SetupTsv()
+  setlocal shiftwidth=32
+  setlocal softtabstop=32
+  setlocal tabstop=32
+  setlocal noexpandtab
+endfunction
+autocmd BufRead,BufNewFile *.tsv call s:SetupTsv()
+
 function! s:SetupReadme()
-  set cc=80
+  setlocal cc=80
 endfunction
 autocmd BufRead,BufNewFile README* call s:SetupReadme()
 
 function! s:SetupPlanfile()
+  setlocal cc=72
   nnoremap <buffer> <leader>r /REMIND<cr>:set nohls<cr>j
   nnoremap <buffer> <leader>m :read !date +"\%Y-\%m-\%d (\%A, \%B \%d, \%Y)"<cr>
                              \<ESC>o<ESC>72i=<ESC>0
@@ -245,13 +266,13 @@ endfunction
 autocmd BufRead,BufNewFile planfile call s:SetupPlanfile()
 
 function! s:SetupTex()
-  set tabstop=2
-  set softtabstop=2
-  set shiftwidth=2
-  set expandtab
-  set linebreak
-  set spell
-  set wrap
+  setlocal tabstop=2
+  setlocal softtabstop=2
+  setlocal shiftwidth=2
+  setlocal expandtab
+  setlocal linebreak
+  setlocal spell
+  setlocal wrap
   " swap modes for moving vertically along a wrapped line lines.
   nnoremap <buffer> k gk
   nnoremap <buffer> j gj
@@ -271,18 +292,18 @@ endfunction
 autocmd FileType *tex call s:SetupTex()
 
 function! s:SetupAsm()
-  set nowrap
+  setlocal nowrap
 endfunction
 autocmd FileType asm call s:SetupAsm()
 
 function! s:SetupC(filename)
-  set cc=80
-  set cino=(0,l1,:0
-  set tabstop=4
-  set softtabstop=4
-  set shiftwidth=4
-  set expandtab
-  set nowrap
+  setlocal cc=80
+  setlocal cino=(0,l1,:0
+  setlocal tabstop=4
+  setlocal softtabstop=4
+  setlocal shiftwidth=4
+  setlocal expandtab
+  setlocal nowrap
   let &path = &path .. ".,"
   let &path = &path .. "/usr/include/,"
   let &path = &path .. "/usr/local/include,"
@@ -299,8 +320,8 @@ function! s:SetupC(filename)
   let c_no_bracket_error = 1
   let c_no_curly_error = 1
   " stupid hack to make no_*_error above work in .c sources
-  set filetype=cpp
-  set syntax=c
+  setlocal filetype=cpp
+  setlocal syntax=c
   " expand brace block
   inoremap <buffer> {} {<enter>}<esc>O
 
@@ -321,6 +342,11 @@ function! s:SetupPython()
   iabbrev <buffer> ubp #!/usr/bin/python
 endfunction
 autocmd FileType python call s:SetupPython()
+
+function! s:SetupXonsh()
+  set filetype=python
+endfunction
+autocmd BufRead,BufNewFile *.xsh call s:SetupXonsh()
 
 function! s:SetupTerminal()
   setlocal nospell

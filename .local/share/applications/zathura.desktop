@@ -5,3 +5,4 @@ GenericName=PDF Viewer
 TryExec=zathura
 Exec=zathura %f
 StartupNotify=false
+MimeType=application/pdf

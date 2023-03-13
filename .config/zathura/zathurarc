@@ -1,0 +1,15 @@
+set font "monospace normal 12"
+set render-loading-fg "#cccccc"
+set render-loading-bg "#000000"
+
+set index-fg "#cccccc"
+set index-bg "#000000"
+set index-active-fg "#bbbbbb"
+set index-active-bg "#444444"
+
+set statusbar-fg "#cccccc"
+set statusbar-bg "#000000"
+
+set recolor-darkcolor "#cccccc"
+set recolor-lightcolor "#171717"
+set recolor-reverse-video "true"
