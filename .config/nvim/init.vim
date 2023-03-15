@@ -339,7 +339,7 @@ autocmd FileType c,cpp call s:SetupC(expand("%"))
 autocmd BufRead,BufNewFile *h1 call s:SetupC(expand("%"))
 
 function! s:SetupPython()
-  iabbrev <buffer> ubp #!/usr/bin/python
+  iabbrev <buffer> shebang #!/usr/bin/env python3
 endfunction
 autocmd FileType python call s:SetupPython()
 
