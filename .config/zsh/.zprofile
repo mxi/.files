@@ -19,7 +19,6 @@ export TERMINAL="/usr/bin/alacritty"
 export MANPAGER="$EDITOR +'Man!' -o -"
 
 # home cleanup
-export XAUTHORITY="$XDG_RUNTIME_DIR/xauth"
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/XCompose/main"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
@@ -49,7 +48,13 @@ eval $(dircolors -b)
 # ssh
 eval $(ssh-agent -s)
 
-# Sleep for a bit in case we screw up some WM config and need <C-C>
-sleep 0.5 && startx
+# manual xorg
+if ! pidof Xorg; then
+  # we can't set it outside because it breaks login managers (obviously)
+  export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+  # sleep in case we screw up config
+  sleep 0.5
+  startx
+fi
 
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh

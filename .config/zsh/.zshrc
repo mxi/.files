@@ -45,7 +45,7 @@ alias cdedu="cd ~/edu/"
 alias cdimage="cd ~/image"
 alias cdsrc="cd ~/src"
 alias cdvideo="cd ~/video"
-alias cdvm="cd ~/vm"
+alias cdvirt="cd ~/virt"
 
 # miscellaneous aliases
 alias cls="clear && l"
