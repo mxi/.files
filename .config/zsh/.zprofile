@@ -43,13 +43,16 @@ export WINIT_X11_SCALE_FACTOR=1
 # nnn
 export NNN_COLORS="#fffcf9f6"
 export NNN_PLUG='1:-!&xournalpp $nnn;'
-eval $(dircolors -b)
+eval $(dircolors >&/dev/null -b)
+
+# neovide
+export NEOVIM_BIN="$EDITOR"
 
 # ssh
-eval $(ssh-agent -s)
+eval $(ssh-agent >&/dev/null -s)
 
 # manual xorg
-if ! pidof Xorg; then
+if ! pidof >&/dev/null Xorg; then
   # we can't set it outside because it breaks login managers (obviously)
   export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
   # sleep in case we screw up config

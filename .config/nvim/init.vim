@@ -28,6 +28,11 @@ set diffopt="vertical"
 set termguicolors
 set background=dark
 colorscheme decoldest
+
+if exists("g:neovide")
+  set guifont=JetBrains\ Mono\ NL:h11
+  let g:neovide_cursor_animation_length = 0.05
+endif
 " }}} 
 
 " Variables {{{

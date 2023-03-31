@@ -16,6 +16,9 @@
 !.config/zsh/**/*
 
 !.config/mimeapps.list
+!.config/kdeglobals
+!.config/kglobalshortcutsrc
+!.config/kwinrc
 !.config/user-dirs.dirs
 !.config/user-dirs.locale
 !.config/wgetrc
