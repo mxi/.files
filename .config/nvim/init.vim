@@ -158,6 +158,13 @@ function! Trim(mode)
   endif
 endfunction
 
+function! Dec2Hex(...)
+  let result = []
+  for item in a:000
+    call add(result, printf("%x", item))
+  endfor
+  return join(result, ",")
+endfunction
 " }}} Functions
 
 " Commands {{{
