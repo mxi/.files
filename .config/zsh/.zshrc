@@ -70,4 +70,7 @@ alias pdf="zathura >>& /dev/null"
 . "$XDG_CONFIG_HOME/zsh/.zshrc_private"
 . "$XDG_CONFIG_HOME/zsh/.zshrc_functions"
 
+# drop into xonsh
+exec /usr/bin/xonsh
+
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh
