@@ -1,2 +1,4 @@
-.zprofile_private
-.zshrc_private
+*
+!.zprofile
+!.zshrc
+!.zshrc_functions
