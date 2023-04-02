@@ -29,6 +29,7 @@ export TEXMFHOME="$XDG_DATA_HOME/texmf"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # dwm colors
 export DWM_CLR_STD='\x0b'

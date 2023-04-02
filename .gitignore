@@ -9,8 +9,8 @@
 !.config/XCompose/
 !.config/XCompose/**/*
 
-!.config/zathura
-!.config/zathura/**
+!.config/zathura/
+!.config/zathura/**/*
 
 !.config/xonsh/
 !.config/xonsh/**/*
@@ -32,6 +32,9 @@
 !.local/share/
 !.local/share/applications/
 !.local/share/applications/**/*
+
+!.local/share/gnupg/
+!.local/share/gnupg/**/*
 # }}} ~/.local
 
 # ~/bin {{{
