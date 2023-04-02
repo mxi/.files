@@ -257,6 +257,7 @@ nnoremap <leader>c :VimCalc<Space>
 augroup Setup | autocmd!
 
 function! s:SetupTsv()
+  setlocal filetype=conf
   setlocal shiftwidth=32
   setlocal softtabstop=32
   setlocal tabstop=32

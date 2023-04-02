@@ -40,8 +40,8 @@ aliases["now"]      = "date +'%Y%m%d-%H%M%S'"
 
 # cd aliases
 aliases["cdconf"]   = "cd $XDG_CONFIG_HOME"
-aliases["cddoc"]    = "cd ~/doc/"
-aliases["cdedu"]    = "cd ~/edu/"
+aliases["cddoc"]    = "cd ~/doc"
+aliases["cdedu"]    = "cd ~/edu"
 aliases["cdimage"]  = "cd ~/image"
 aliases["cdsrc"]    = "cd ~/src"
 aliases["cdvideo"]  = "cd ~/video"
@@ -64,9 +64,9 @@ aliases["make"]     = "make -j8"
 aliases["mpv"]      = "mpv --script-opts=osc-timems=yes"
 aliases["pandoc"]   = "pandoc --pdf-engine=xelatex"
 aliases["rm"]       = _stub_rm
-aliases["xpp"]      = "xournalpp >>& /dev/null"
+aliases["xpp"]      = "xournalpp @($args) all> /dev/null"
 aliases["dasm"]     = "objdump -d -M intel"
 aliases["open"]     = "xdg-open"
-aliases["pdf"]      = "zathura >>& /dev/null"
+aliases["pdf"]      = "zathura @($args) all> /dev/null"
 
 # vi: sw=4 sts=4 ts=4 et cc=80 ft=python
