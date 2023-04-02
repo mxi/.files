@@ -9,7 +9,7 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 . "$XDG_CONFIG_HOME/zsh/.zprofile_private"
 
 # paths
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PYTHONHISTORY="$XDG_CACHE_HOME/.python_history"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 

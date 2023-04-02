@@ -141,7 +141,7 @@ History Items[$e]=file:$HOME/video/obs,file:$HOME/src/etc/Graphite-kde-theme/Kva
 
 [General]
 BrowserApplication=firefox.desktop
-ColorSchemeHash=51d730535134e778fe069690ae4f1f61fb700fdc
+ColorSchemeHash=7e27a66e6ec46638e4fb9d9f6caa72c4f044c338
 LastUsedCustomAccentColor=233,61,88
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop

@@ -1,5 +1,8 @@
 #!/bin/sh
 #
+# 2023-04-01: I've since moved to KDE because I'm tired of wasting time. 
+# This is mostly a historic relic now.
+#
 # NOTE: we assume we're running the intel driver because the names of the
 #       ports change with different drivers. Further, some drivers freeze
 #       for a bit on $(xrandr) making the computer unusable when this is
