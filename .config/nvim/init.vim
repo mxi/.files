@@ -11,6 +11,7 @@ set nu rnu
 set splitright splitbelow
 set modeline
 set nofoldenable
+set foldmethod=marker
 set ignorecase
 set smartcase
 set autoindent

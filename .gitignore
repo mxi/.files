@@ -46,5 +46,3 @@
 !.xinitrc
 !.zshenv
 # }}} ~
-
-# vi: ft=conf cc=80 fdm=marker
