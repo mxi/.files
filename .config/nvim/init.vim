@@ -29,13 +29,7 @@ set termguicolors
 set background=dark
 colorscheme decoldest
 
-if exists("g:neovide")
-  set guifont=JetBrains\ Mono\ NL:h11
-  let g:neovide_cursor_animation_length = 0.05
-endif
-" }}} 
-
-" Variables {{{
+let shell = 'xonsh'
 let man_hardwrap = 1
 let ft_man_open_mode = 'vert'
 
@@ -43,11 +37,16 @@ let netrw_banner = 0
 let netrw_liststyle = 3
 let netrw_browse_split = 0
 
+if exists("g:neovide")
+  set guifont=JetBrains\ Mono\ NL:h11
+  let g:neovide_cursor_animation_length = 0.05
+endif
+" }}} 
+
+" Math {{{
 let M_E  = 2.718281828459045
 let M_PI = 3.141592653589793
-" }}}
 
-" Functions {{{
 function! Mod(a, b)
   let tmp = a:a % a:b
   return tmp < 0 ? a:b + tmp : tmp
@@ -80,7 +79,9 @@ endfunction
 function! TiB(n) 
   return g:GiB(a:n) * 1024 
 endfunction
+" }}} Math
 
+" Functions {{{
 function! SyntaxStack()
   if !exists("*synstack") | return | endif
   echo map(synstack(line("."), col(".")), "synIDattr(v:val, 'name')")
@@ -239,7 +240,7 @@ tnoremap <a-j> <c-\><c-n><c-w>j
 tnoremap <a-k> <c-\><c-n><c-w>k
 tnoremap <a-l> <c-\><c-n><c-w>l
 tnoremap <a-x> <c-\><c-n>
-nnoremap <leader>T :vs<cr>:term<cr>i
+nnoremap <leader>T :execute printf("vs term://%s", shell)<cr>i
 " make ctags display confirm dialogue by default
 nnoremap <c-]> g<c-]>
 nnoremap g<c-]> <c-]>
@@ -350,6 +351,12 @@ function! s:SetupC(filename)
 endfunction
 autocmd FileType c,cpp call s:SetupC(expand("%"))
 autocmd BufRead,BufNewFile *h1 call s:SetupC(expand("%"))
+
+function! s:SetupRust()
+  " expand brace block
+  inoremap <buffer> {} {<enter>}<esc>O
+endfunction
+autocmd FileType rust call s:SetupRust()
 
 function! s:SetupPython()
   iabbrev <buffer> shebang #!/usr/bin/env python3
