@@ -44,6 +44,7 @@ aliases["now"]      = "date +'%Y%m%d-%H%M%S'"
 
 # cd aliases
 aliases["cdconf"]   = "cd $XDG_CONFIG_HOME"
+aliases["cdxonsh"]  = "cd $XDG_CONFIG_HOME/xonsh"
 aliases["cddoc"]    = "cd ~/doc"
 aliases["cdedu"]    = "cd ~/edu"
 aliases["cdimage"]  = "cd ~/image"
@@ -77,5 +78,8 @@ if (_helpers_xsh := p"$XDG_CONFIG_HOME/xonsh/helpers.xsh").exists():
 
 if (_rm_xsh := p"$XDG_CONFIG_HOME/xonsh/rm.xsh").exists():
     source @(_rm_xsh)
+
+if (_dashm_xsh := p"$XDG_CONFIG_HOME/xonsh/dashm.xsh").exists():
+    source @(_dashm_xsh)
 
 # vi: sw=4 sts=4 ts=4 et cc=80 ft=python
