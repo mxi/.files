@@ -1,9 +1,3 @@
-def _make_alias(name):
-    def wrapper(func):
-        aliases[name] = func
-        return func
-    return wrapper
-
 @_make_alias("lspath")
 def _lspath(*args, **kwargs):
     import os

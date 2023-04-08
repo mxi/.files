@@ -1,7 +1,13 @@
 setopt extendedglob
+setopt prompt_subst
 
-export PS1=$'\n%{\e[90m%}%n@%m %{\e[91m%}%~%{\e[90m%}\n❱%{\e[0m%} '
-export PS2=$'%{\e[90m%}❱%{\e[0m%} '
+unalias run-help >& /dev/null
+autoload -U run-help
+autoload -U colors && colors
+autoload -U compinit && compinit
+
+. "$XDG_CONFIG_HOME/zsh/.zshrc_prompt"
+
 export GPG_TTY=$(tty)
 
 # git
@@ -23,9 +29,9 @@ alias eawesome="$EDITOR $XDG_CONFIG_HOME/awesome/rc.lua"
 alias ecompose="$EDITOR $XCOMPOSEFILE"
 alias envim="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
 alias eprof="$EDITOR $XDG_CONFIG_HOME/zsh/.zprofile"
-alias erc="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
-alias ercfn="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_functions"
-alias exrc="$EDITOR $HOME/.xinitrc"
+alias ezrc="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
+alias ezrcfn="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_functions"
+alias exinit="$EDITOR $HOME/.xinitrc"
 alias ezathura="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
 alias reprofile="source $XDG_CONFIG_HOME/zsh/.zprofile"
 alias resource="source $XDG_CONFIG_HOME/zsh/.zshrc"

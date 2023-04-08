@@ -1,3 +1,9 @@
+def _make_alias(name):
+    def wrapper(func):
+        aliases[name] = func
+        return func
+    return wrapper
+
 def _source_if_exists(name):
     file = pf"$XDG_CONFIG_HOME/xonsh/{name}.xsh"
     if file.exists():
@@ -9,8 +15,8 @@ $AUTO_SUGGEST = True
 $VI_MODE = True
 $GPG_TTY = $(tty)
 
-$VIRTUALENV_HOME = f"{$XDG_DATA_HOME}/virtualenvs"
-xontrib load vox
+$VIRTUALENV_HOME = p"$XDG_DATA_HOME/virtualenvs"
+xontrib load vox autovox
 
 _source_if_exists("prompt")
 

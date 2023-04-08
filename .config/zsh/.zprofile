@@ -21,6 +21,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 # programs
 export EDITOR="$(which nvim)"
 export TERMINAL="$(which alacritty)"
+export PAGER=$(which less)
 export MANPAGER="$EDITOR +'Man!' -o -"
 
 # home cleanup

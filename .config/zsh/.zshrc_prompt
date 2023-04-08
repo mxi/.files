@@ -1,0 +1,74 @@
+function _prompt_logon() {
+  # '\n<user>@<hostname>' with user and hostname bolded. Additionally, if we're 
+  # root, we make it red so we make slightly fewer mistakes. The newline at the
+  # beginning is to separate the previous output from the fresh prompt.
+  local R=$(print "%{$fg_bold[red]%}")
+  local r=$(print "%{$fg_no_bold[red]%}")
+  local W=$(print "%{$fg_bold[white]%}")
+  local w=$(print "%{$fg_no_bold[white]%}")
+  local o=$(print "%{$reset_color%}")
+
+  [ $(id -u) -eq 0 ] \
+    && echo -n "\n$R%n$r@$R%m$o" \
+    || echo -n "\n$W%n$w@$W%m$o"
+}
+
+function _prompt_ssh() {
+  # ' [<addr>]' (space intentional) bolded, where <addr> is the client IP 
+  # address, if we're in an SSH session.
+  if [ -n "$SSH_CONNECTION" ]; then
+    local R=$(print "%{$fg_bold[red]%}")
+    local o=$(print "%{$reset_color%}")
+    local addr=$(echo -n $SSH_CONNECTION | cut -d' ' -f1)
+    echo -n "$R" "[$addr]$o"
+  fi
+}
+
+function _prompt_git() {
+  # ' [<branch>]' (space intentional) boded, where <branch> is the branch of
+  # the git repository we're in. If not in a repo, nothing is displayed.
+  local guard=100
+  local savedir=""
+  local searchdir=$(pwd)
+  until [ "$searchdir" = "$savedir" -o -d "$searchdir/.git" ]; do
+    savedir="$searchdir"
+    searchdir="${searchdir%/*}"
+    if [ ${guard::=$((guard-1))} -eq 0 ]; then
+      echo >&2 "_prompt_git: iteration limit reached!" > $(tty)
+      break
+    fi
+  done
+
+  [ -d "$searchdir/.git" ] \
+    && local name=$(git branch --show-current) \
+    || unset local name
+
+  if [ -n "$name" ]; then
+    local G=$(print "%{$fg_bold[green]%}")
+    local o=$(print "%{$reset_color%}")
+    echo -n "$G" "[$name]%o"
+  fi
+}
+
+function _prompt_cwd() {
+  # ' <cwd>' (space intentional) bolded. 
+  local W=$(print "%{$fg_bold[white]%}")
+  local o=$(print "%{$reset_color%}")
+  echo -n " $W%~$o"
+}
+
+function _prompt_indicator() {
+  # '<$0> ' where $0 is the desired indicator or '$' by default.
+  [ $(id -u) -eq 0 ] \
+    && local def='#' \
+    || local def='$'
+  local W=$(print "%{$fg_bold[white]%}")
+  local o=$(print "%{$reset_color%}")
+  local c=${1:-$def}
+  echo -n "$W$c$o "
+}
+
+export PS1=$'$(_prompt_logon)$(_prompt_ssh)$(_prompt_git)$(_prompt_cwd)\n$(_prompt_indicator)'
+export PS2=$'$(_prompt_indicator \'|\')'
+
+# vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh

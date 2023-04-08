@@ -30,7 +30,7 @@ set termguicolors
 set background=dark
 colorscheme decoldest
 
-let shell = 'xonsh'
+let shell = 'zsh'
 let man_hardwrap = 1
 let ft_man_open_mode = 'vert'
 
