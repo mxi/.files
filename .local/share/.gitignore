@@ -1,0 +1,8 @@
+/*
+
+!applications
+!gnupg/dirmngr.conf
+!gnupg/gpg-agent.conf
+!gnupg/gpg.conf
+
+!.gitignore

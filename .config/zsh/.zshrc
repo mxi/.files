@@ -1,5 +1,5 @@
 setopt extendedglob
-setopt prompt_subst
+setopt promptsubst
 
 unalias run-help >& /dev/null
 autoload -U run-help

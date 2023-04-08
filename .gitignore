@@ -1,45 +1,8 @@
-*
+/*
 
-# ~/.config {{{
-!.config/
+!.config
+!.local
 
-!.config/nvim/
-!.config/nvim/**/*
-
-!.config/XCompose/
-!.config/XCompose/**/*
-
-!.config/zathura/
-!.config/zathura/**/*
-
-!.config/zsh/
-!.config/zsh/**/*
-
-!.config/mimeapps.list
-!.config/kdeglobals
-!.config/kglobalshortcutsrc
-!.config/kwinrc
-!.config/user-dirs.dirs
-!.config/user-dirs.locale
-!.config/wgetrc
-# }}} ~/.config
-
-# ~/.local {{{
-!.local/
-
-!.local/bin/
-!.local/bin/**/*
-
-!.local/share/
-!.local/share/applications/
-!.local/share/applications/**/*
-
-!.local/share/gnupg/
-!.local/share/gnupg/**/*
-# }}} ~/.local
-
-# ~ {{{
 !.gitignore
 !.xinitrc
 !.zshenv
-# }}} ~
