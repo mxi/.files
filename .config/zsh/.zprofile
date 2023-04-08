@@ -57,7 +57,7 @@ eval $(dircolors >&/dev/null -b)
 export NEOVIM_BIN="$EDITOR"
 
 # ssh
-eval $(ssh-agent >&/dev/null -s)
+eval $(ssh-agent 2>&/dev/null -s)
 
 # manual xorg
 if ! pidof >&/dev/null Xorg; then

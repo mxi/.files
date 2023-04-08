@@ -12,9 +12,6 @@
 !.config/zathura/
 !.config/zathura/**/*
 
-!.config/xonsh/
-!.config/xonsh/**/*
-
 !.config/zsh/
 !.config/zsh/**/*
 
