@@ -250,7 +250,7 @@ _launch=Meta+Space,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [org.kde.plasma.emojier.desktop]
 _k_friendly_name=Emoji Selector
-_launch=Meta+.,Meta+.,Emoji Selector
+_launch=none,Meta+.,Emoji Selector
 
 [org.kde.spectacle.desktop]
 ActiveWindowScreenShot=Meta+Print,Meta+Print,Capture Active Window

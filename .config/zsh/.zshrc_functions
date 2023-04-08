@@ -126,11 +126,11 @@ copyscreenshots() {
 }
 
 sensitivity() {
-  USAGE="usage: sensitivity [SCALE=1.3] [DEVICE=\$__MAXIM_PRIMARY_MOUSE]"
+  USAGE="usage: sensitivity [SCALE=1.3] [DEVICE=\$__OPSEC_PRIMARY_MOUSE]"
   SCALE=$1 && [ -z "${SCALE:=1.3}" ] \
     && echo >&2 "$USAGE" \
     && return 1
-  DEVICE=$2 && [ -z "${DEVICE:=$__MAXIM_PRIMARY_MOUSE}" ] \
+  DEVICE=$2 && [ -z "${DEVICE:=$__OPSEC_PRIMARY_MOUSE}" ] \
     && echo >&2 "$USAGE" \
     && return 1
   xinput set-prop "$DEVICE" "Coordinate Transformation Matrix" \

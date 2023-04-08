@@ -19,8 +19,8 @@ export PYTHONHISTORY="$XDG_CACHE_HOME/.python_history"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
 # programs
-export EDITOR="/usr/local/bin/nvim"
-export TERMINAL="/usr/bin/alacritty"
+export EDITOR="$(which nvim)"
+export TERMINAL="$(which alacritty)"
 export MANPAGER="$EDITOR +'Man!' -o -"
 
 # home cleanup
