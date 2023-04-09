@@ -2,7 +2,9 @@
 
 !.config
 !.local
+!.ssh/config
 
-!.gitignore
 !.xinitrc
 !.zshenv
+
+!.gitignore
