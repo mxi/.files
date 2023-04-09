@@ -1,14 +1,15 @@
 setopt extendedglob
 setopt promptsubst
 
+export GPG_TTY=$(tty)
+
 unalias run-help >& /dev/null
 autoload -U run-help
 autoload -U colors && colors
 autoload -U compinit && compinit
 
-. "$XDG_CONFIG_HOME/zsh/.zshrc_prompt"
-
-export GPG_TTY=$(tty)
+. "$XDG_CONFIG_HOME/zsh/.zshrc_promp"t
+. "$XDG_CONFIG_HOME/zsh/tools/"*
 
 # git
 alias dotfiles="git --git-dir=$HOME/.files/ --work-tree=$HOME"
@@ -29,8 +30,9 @@ alias eawesome="$EDITOR $XDG_CONFIG_HOME/awesome/rc.lua"
 alias ecompose="$EDITOR $XCOMPOSEFILE"
 alias envim="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
 alias ezprof="$EDITOR $XDG_CONFIG_HOME/zsh/.zprofile"
-alias ezrc="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
-alias ezrcfn="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_functions"
+alias ezshrc="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
+alias ezshrcfn="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_functions"
+alias ezshrcprompt="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc_prompt"
 alias exinit="$EDITOR $HOME/.xinitrc"
 alias ezathura="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
 alias reprofile="source $XDG_CONFIG_HOME/zsh/.zprofile"
@@ -69,7 +71,6 @@ alias dasm="objdump -d -M intel"
 alias open="xdg-open"
 alias pdf="zathura >>& /dev/null"
 
-. "$XDG_CONFIG_HOME/zsh/.zshrc_private"
-. "$XDG_CONFIG_HOME/zsh/.zshrc_functions"
+. $XDG_CONFIG_HOME/zsh/.zshrc_private
 
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh

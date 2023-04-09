@@ -1,26 +1,25 @@
-lspath() {
-  for d in $(echo "$PATH" | tr ':' '\n'); do
-    for f in $(/usr/bin/ls "$d"); do
-      echo "$d/$f"
-    done
-  done
+# Aside from the addition of the "function" keyword, I don't remember the
+# last time I looked at these nor used them. They originated from a time when
+# I tried to go suckless and it turned out that designing your own desktop
+# environment is not very productive. These are left for historic reasons.
+
+function sensitivity() {
+  USAGE="usage: sensitivity [SCALE=1.3] [DEVICE=\$__OPSEC_PRIMARY_MOUSE]"
+  SCALE=$1 && [ -z "${SCALE:=1.3}" ] \
+    && echo >&2 "$USAGE" \
+    && return 1
+  DEVICE=$2 && [ -z "${DEVICE:=$__OPSEC_PRIMARY_MOUSE}" ] \
+    && echo >&2 "$USAGE" \
+    && return 1
+  xinput set-prop "$DEVICE" "Coordinate Transformation Matrix" \
+    $SCALE    0.0   0.0 \
+       0.0 $SCALE   0.0 \
+       0.0    0.0   1.0 \
+    && echo "OK" \
+    || echo >&2 "FAIL"
 }
 
-lsgsettings() {
-  for schema in $(gsettings list-schemas) $(gsettings list-relocatable-schemas); do
-    echo "$schema"
-    for key in $(gsettings list-keys $schema); do
-      echo "    $key = $(gsettings get $schema $key)"
-    done
-  done
-}
-
-lsgccdefines() {
-  # I do this frequenctly enough to warrant.
-  gcc -E -dM - < /dev/null
-}
-
-audioconcat() {
+function audio-concat() {
   OUTFILE=${1:?"audioconcat OUTPUT INPUT..."}
   OUTLIST="$OUT.audioconcat-tmp.in"
   shift
@@ -38,7 +37,7 @@ audioconcat() {
   rm "$OUTLIST"
 }
 
-pdfdiff() {
+function pdf-diff() {
   # This very crudly uses ImageMagick to detect pixel differences between pages 
   # of two PDF files and overlay the difference on the new file by using a 
   # ridiculously small DPI to make the "smudges" easier to spot when blazing 
@@ -86,7 +85,7 @@ pdfdiff() {
   pdftk "$DIR_DIFF/"*.pdf cat output "$OUTPUT"
 }
 
-pdfmerge() {
+function pdf-merge() {
   # This is mostly a historic relic at this point. I have been using pdftk for 
   # a while now which is significantly more productive that this garbage. You 
   # can tell I wrote this a long time ago by the fact that I didn't know about 
@@ -104,7 +103,7 @@ pdfmerge() {
   /usr/bin/gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$OUT" $@
 }
 
-texdocm() {
+function tex-docm() {
   # I believe the reason I wrote this was because the original texdoc didn't 
   # open the PDF documentation files for whatever reason. This was a pretty
   # simple solution.
@@ -119,26 +118,6 @@ texdocm() {
     return 2
   fi
   pdf $DOCFILE
-}
-
-copyscreenshots() {
-  sxiv -t -o ~/image/screenshot/ | xargs cp -t ${1:-.}
-}
-
-sensitivity() {
-  USAGE="usage: sensitivity [SCALE=1.3] [DEVICE=\$__OPSEC_PRIMARY_MOUSE]"
-  SCALE=$1 && [ -z "${SCALE:=1.3}" ] \
-    && echo >&2 "$USAGE" \
-    && return 1
-  DEVICE=$2 && [ -z "${DEVICE:=$__OPSEC_PRIMARY_MOUSE}" ] \
-    && echo >&2 "$USAGE" \
-    && return 1
-  xinput set-prop "$DEVICE" "Coordinate Transformation Matrix" \
-    $SCALE    0.0   0.0 \
-       0.0 $SCALE   0.0 \
-       0.0    0.0   1.0 \
-    && echo "OK" \
-    || echo >&2 "FAIL"
 }
 
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh
