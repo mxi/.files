@@ -27,6 +27,7 @@ enableSpreadLayout=false
 enableStairLayout=false
 enableThreeColumnLayout=false
 floatingClass=systemsettings,pinentry-gtk-2,pinentry-gtk,pinentry-qt
+floatingTitle=planfile
 newWindowAsMaster=true
 screenGapBottom=12
 screenGapLeft=12

@@ -25,4 +25,9 @@ function copy-screenshots() {
   sxiv -t -o ~/image/screenshot/ | xargs cp -t ${1:-.}
 }
 
+function delete-nvim-swapfiles() {
+  \rm -irf "$HOME/.local/state/nvim/swap/"*
+  \rm -irf "$HOME/.local/share/nvim/swap/"*
+}
+
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh
