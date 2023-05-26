@@ -25,7 +25,7 @@ function _prompt_ssh() {
 }
 
 function _prompt_git() {
-  # ' [<branch>]' (space intentional) boded, where <branch> is the branch of
+  # ' [<branch>]' (space intentional) bolded, where <branch> is the branch of
   # the git repository we're in. If not in a repo, nothing is displayed.
   local guard=100
   local savedir=""
@@ -39,9 +39,11 @@ function _prompt_git() {
     fi
   done
 
-  [ -d "$searchdir/.git" ] \
-    && local name=$(git branch --show-current) \
-    || unset local name
+  if [ -d "$searchdir" ] && git >&/dev/null branch; then
+    local name=$(git branch --show-current)
+  else
+    unset local name
+  fi
 
   if [ -n "$name" ]; then
     local G=$(print "%{$fg_bold[green]%}")

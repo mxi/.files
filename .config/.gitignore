@@ -6,9 +6,6 @@
 !zsh
 
 !mimeapps.list
-!kdeglobals
-!kglobalshortcutsrc
-!kwinrc
 !user-dirs.dirs
 !user-dirs.locale
 !wgetrc

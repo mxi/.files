@@ -9,7 +9,7 @@ fi
 #   remap Caps-E to primary (left) click,
 #   remap Caps-W to secondary (right) click,
 #   remap Caps-Q to middle click,
-xinput --set-button-map 'keyd virtual pointer' 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 2
+# xinput --set-button-map 'keyd virtual pointer' 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 2
 
 setxkbmap -option compose:ralt &
 pulseaudio-equalizer enable &

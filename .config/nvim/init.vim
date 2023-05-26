@@ -167,6 +167,23 @@ function! Dec2Hex(...)
   endfor
   return join(result, ",")
 endfunction
+
+function! FileRemoveOneExtension(path)
+  if len(a:path) && a:path[0] == '/'
+    let path_prefix = '/'
+  else
+    let path_prefix = ''
+  endif
+  let file_elements = split(a:path, '/')
+  call filter(file_elements, 'len(v:val)')
+  let file_dotparts = split(l:file_elements[-1], '\.')
+  if len(l:file_dotparts) == 1
+    let l:file_elements[-1] = l:file_dotparts[0]
+  else
+    let l:file_elements[-1] = join(l:file_dotparts[0:-2], '.')
+  endif
+  return l:path_prefix .. join(l:file_elements[0:-1], '/')
+endfunction
 " }}} Functions
 
 " Commands {{{
@@ -286,7 +303,9 @@ function! s:SetupTex()
   setlocal shiftwidth=2
   setlocal expandtab
   setlocal linebreak
-  setlocal spell
+  if &filetype != "bib"
+    setlocal spell
+  endif
   setlocal wrap
   " swap modes for moving vertically along a wrapped line lines.
   nnoremap <buffer> k gk
@@ -301,17 +320,22 @@ function! s:SetupTex()
   if &filetype == "plaintex"
     nnoremap <buffer> <leader>m :w<cr>:!pdftex "%"<cr>
   else
-    nnoremap <buffer> <leader>m :w<cr>:!pdflatex "%"<cr>
+    nnoremap <buffer> <leader>m :w<cr>
+                               \:!pdflatex '%'<cr>
+    nnoremap <buffer> <leader>M :w<cr>
+                               \:!pdflatex '%'<cr>
+                               \:execute "!biber '"..FileRemoveOneExtension(expand('%')).."'"<cr>
+                               \:!pdflatex '%'<cr>
   endif
 endfunction
-autocmd FileType *tex call s:SetupTex()
+autocmd FileType *tex,*bib call s:SetupTex()
 
 function! s:SetupAsm()
   setlocal nowrap
 endfunction
 autocmd FileType asm call s:SetupAsm()
 
-function! s:SetupC(filename)
+function! s:SetupC()
   setlocal cc=80
   setlocal cino=(0,l1,:0
   setlocal tabstop=4
@@ -319,19 +343,21 @@ function! s:SetupC(filename)
   setlocal shiftwidth=4
   setlocal expandtab
   setlocal nowrap
-  let &path = &path .. ".,"
-  let &path = &path .. "/usr/include/,"
-  let &path = &path .. "/usr/local/include,"
-  let &path = &path .. "/usr/include/opencv4,"
-  let &path = &path .. "/usr/include/cairo,"
-  let &path = &path .. "/usr/include/lzo,"
-  let &path = &path .. "/usr/include/libpng16,"
-  let &path = &path .. "/usr/include/freetype2,"
-  let &path = &path .. "/usr/include/harfbuzz,"
-  let &path = &path .. "/usr/include/glib-2.0,"
-  let &path = &path .. "/usr/include/sysprof-4,"
-  let &path = &path .. "/usr/include/pixman-1,"
-  let &path = &path .. "/usr/lib/glib-2.0/include,"
+  if &ft != "d"
+    let &path = &path .. ".,"
+    let &path = &path .. "/usr/include/,"
+    let &path = &path .. "/usr/local/include,"
+    let &path = &path .. "/usr/include/opencv4,"
+    let &path = &path .. "/usr/include/cairo,"
+    let &path = &path .. "/usr/include/lzo,"
+    let &path = &path .. "/usr/include/libpng16,"
+    let &path = &path .. "/usr/include/freetype2,"
+    let &path = &path .. "/usr/include/harfbuzz,"
+    let &path = &path .. "/usr/include/glib-2.0,"
+    let &path = &path .. "/usr/include/sysprof-4,"
+    let &path = &path .. "/usr/include/pixman-1,"
+    let &path = &path .. "/usr/lib/glib-2.0/include,"
+  endif
   let c_no_bracket_error = 1
   let c_no_curly_error = 1
   " stupid hack to make no_*_error above work in .c sources
@@ -339,19 +365,15 @@ function! s:SetupC(filename)
   setlocal syntax=c
   " expand brace block
   inoremap <buffer> {} {<enter>}<esc>O
-
-  if a:filename =~ '.*\.h1'
-    " this is our custom h1 language, we just don't want the mappings
-    " for c/cpp in the else block because they are useless.
-  else
-    " quickly run make
-    nnoremap <buffer> <leader>m :make<cr><Enter>:cnext<cr>:cprev<cr>
-    " 'lookup' word under cursor using vimgrep in all .c, .h files.
-    nnoremap <buffer> <leader>k viwy:execute("vimgrep /"..getreg("\"").."/ **/*.h **/*.c")<cr>
-  endif
+  " quickly run make
+  nnoremap <buffer> <leader>m :make<cr><Enter>:cnext<cr>:cprev<cr>
+  " 'lookup' word under cursor using vimgrep in all .c, .h files.
+  nnoremap <buffer> <leader>k viwy
+    \ :execute('vimgrep /'..getreg('"')..'/ '..
+    \ '**/*.h '..
+    \ '**/*.c ')<cr>
 endfunction
-autocmd FileType c,cpp call s:SetupC(expand("%"))
-autocmd BufRead,BufNewFile *h1 call s:SetupC(expand("%"))
+autocmd FileType c,d,cpp call s:SetupC()
 
 function! s:SetupRust()
   " expand brace block
@@ -360,6 +382,7 @@ endfunction
 autocmd FileType rust call s:SetupRust()
 
 function! s:SetupPython()
+  set cc=80
   iabbrev <buffer> shebang #!/usr/bin/env python3
 endfunction
 autocmd FileType python call s:SetupPython()

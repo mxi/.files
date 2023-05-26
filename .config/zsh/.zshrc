@@ -1,5 +1,8 @@
 export GPG_TTY=$(tty)
 
+export DOTMAPREPO="$HOME/.map/repo"
+export DOTMAPTEST="$HOME/.map/test"
+
 # bootstrap 
 setopt extendedglob
 setopt promptsubst
@@ -36,13 +39,14 @@ alias logout="loginctl terminate-session ''"
 alias ealac="$EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml"
 alias eawesome="$EDITOR $XDG_CONFIG_HOME/awesome/rc.lua"
 alias ecompose="$EDITOR $XCOMPOSEFILE"
+alias edotmap="$EDITOR $HOME/.local/bin/dotmap"
 alias envim="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+alias exinit="$EDITOR $HOME/.xinitrc"
+alias ezathura="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
 alias ezprof="$EDITOR $ZDOTDIR/.zprofile"
 alias ezshrc="$EDITOR $ZDOTDIR/.zshrc"
 alias ezshrcfn="$EDITOR $ZDOTDIR/.zshrc_functions"
 alias ezshrcprompt="$EDITOR $ZDOTDIR.zshrc_prompt"
-alias exinit="$EDITOR $HOME/.xinitrc"
-alias ezathura="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
 alias reprofile="source $ZDOTDIR/.zprofile"
 alias resource="source $ZDOTDIR/.zshrc"
 
