@@ -324,7 +324,7 @@ function! s:SetupTex()
                                \:!pdflatex '%'<cr>
     nnoremap <buffer> <leader>M :w<cr>
                                \:!pdflatex '%'<cr>
-                               \:execute "!biber '"..FileRemoveOneExtension(expand('%')).."'"<cr>
+                               \:!biber '%:r'<cr>
                                \:!pdflatex '%'<cr>
   endif
 endfunction
