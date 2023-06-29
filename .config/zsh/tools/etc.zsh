@@ -21,6 +21,24 @@ function ls-gcc-defines() {
   gcc -E -dM - < /dev/null
 }
 
+function set-color-preference() {
+  if [ -n "$1" ]; then
+    case $1 in
+      "light") 
+        gsettings set org.gnome.desktop.interface color-scheme prefer-light 
+      ;;
+      "dark") 
+        gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+      ;;
+      *)
+        print-error "Theme must be either 'light' or 'dark' (case sensitive.)"
+      ;;
+    esac
+  else
+    print-error "usage: set-color-preference <light|dark>"
+  fi
+}
+
 function copy-screenshots() {
   sxiv -t -o ~/image/screenshot/ | xargs cp -t ${1:-.}
 }
