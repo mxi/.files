@@ -83,6 +83,7 @@ alias xpp="xournalpp >>& /dev/null"
 alias dasm="objdump -d -M intel"
 alias open="xdg-open"
 alias pdf="zathura >>& /dev/null"
+alias nnn="nnn -de"
 
 . $ZDOTDIR/.zshrc_private
 
