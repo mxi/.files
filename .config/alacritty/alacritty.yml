@@ -1,0 +1,58 @@
+window:
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: true 
+  opacity: 1.0
+  dynamic_title: true
+
+font:
+  normal:
+    family: Comic Mono
+    style: Normal
+  bold:
+    family: Comic Mono
+    style: Bold
+  size: 12
+  builtin_box_drawing: true
+
+colors:
+  primary:
+    background: "#000000"
+    foreground: "#c5c8c6"
+  normal:
+    black:      "#404040"
+    red:        "#c23621"
+    green:      "#25bc24"
+    yellow:     "#e5e510"
+    blue:       "#2e7cd2"
+    magenta:    "#bc3fbc"
+    cyan:       "#33bbc8"
+    white:      "#d5d5d5"
+  bright:
+    black:      "#808080"
+    red:        "#d54e53"
+    green:      "#b9ca4a"
+    yellow:     "#e7c547"
+    blue:       "#7aa6da"
+    magenta:    "#c397d8"
+    cyan:       "#70c0b1"
+    white:      "#eaeaea"
+
+cursor:
+  unfocused_hollow: true
+
+shell:
+  program: /bin/zsh
+
+key_bindings:
+  - { key: Return, mods: Alt, action: CreateNewWindow    }
+  - { key: V,      mods: Alt, action: Paste              }
+  - { key: C,      mods: Alt, action: Copy               }
+  - { key: D,      mods: Alt, action: ScrollHalfPageDown }
+  - { key: U,      mods: Alt, action: ScrollHalfPageUp   }
+  - { key: Equals, mods: Alt, action: IncreaseFontSize   }
+  - { key: Minus,  mods: Alt, action: DecreaseFontSize   }
+
+debug:
+  render_timer: false

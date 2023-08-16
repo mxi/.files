@@ -61,7 +61,7 @@ alias cdedu="cd ~/edu/"
 alias cdimage="cd ~/image"
 alias cdsrc="cd ~/src"
 alias cdvideo="cd ~/video"
-alias cdvirt="cd ~/virt"
+alias cdvmrack="cd ~/vmrack"
 
 # coreutils
 alias grep="grep -En --color=auto"
