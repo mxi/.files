@@ -236,6 +236,7 @@ nnoremap <leader>, :cprev<cr>
 " tab movement
 for n in range(1, 9)
   execute printf("nnoremap <a-%d> :norm %dgt<cr>", n, n)
+  execute printf("inoremap <a-%d> <esc>:norm %dgt<cr>", n, n)
 endfor
 nnoremap <leader>t :tab split<cr>
 nnoremap <leader><leader> :norm gt<cr>
