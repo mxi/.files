@@ -1,6 +1,6 @@
 # Uncategorized stuff.
 
-function ls-path() {
+ls-path() {
   for d in $(echo "$PATH" | tr ':' '\n'); do
     for f in $(/usr/bin/ls "$d"); do
       echo "$d/$f"
@@ -8,7 +8,7 @@ function ls-path() {
   done
 }
 
-function ls-gsettings() {
+ls-gsettings() {
   for schema in $(gsettings list-schemas) $(gsettings list-relocatable-schemas); do
     echo "$schema"
     for key in $(gsettings list-keys $schema); do
@@ -17,11 +17,11 @@ function ls-gsettings() {
   done
 }
 
-function ls-gcc-defines() {
+ls-gcc-defines() {
   gcc -E -dM - < /dev/null
 }
 
-function set-color-preference() {
+set-color-preference() {
   if [ -n "$1" ]; then
     case $1 in
       "light") 
@@ -39,11 +39,11 @@ function set-color-preference() {
   fi
 }
 
-function copy-screenshots() {
+copy-screenshots() {
   sxiv -t -o ~/image/screenshot/ | xargs cp -t ${1:-.}
 }
 
-function delete-nvim-swapfiles() {
+delete-nvim-swapfiles() {
   \rm -irf "$HOME/.local/state/nvim/swap/"*
   \rm -irf "$HOME/.local/share/nvim/swap/"*
 }

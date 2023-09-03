@@ -1,7 +1,7 @@
 # In addition to the `color' autoloaded functions, these helpers make writing
 # tools a bit nicer and give them more polish.
 
-function >&2 _print() {
+_print() >&2 {
   # PUBLIC ENV
   #   + program_name := an optional name of the program.
   # PRIVATE ENV
@@ -13,22 +13,22 @@ function >&2 _print() {
   print "${_print_prefix}$@$reset_color"
 }
 
-function print-debug() {
+print-debug() {
   local _print_style="$reset_color"
   _print "$@"
 }
 
-function print-info() {
+print-info() {
   local _print_style="$fg[white]"
   _print "$@"
 }
 
-function print-warning() {
+print-warning() {
   local _print_style="$fg[yellow]"
   _print "$@"
 }
 
-function print-error() {
+print-error() {
   local _print_style="$fg[red]"
   _print "$@"
 }

@@ -1,40 +1,62 @@
-function gpg-export() {
+silent-pushd() >&/dev/null {
+  pushd "$@"
+}
+
+silent-popd() >&/dev/null {
+  popd
+}
+
+gpg-export() {
   local program="$0"
   local usage="usage: $program ARCHIVE-NAME [SECRET-KEY...]"
 
   # arguments
   local name=$1
-  [ -z "$name" ]                                      \
-    && echo -n >&2 "$usage\nArchive name required.\n" \
+  [ -z "$name" ]                            \
+    && print-error "$usage"                 \
+    && print-error "Archive name required!" \
     && return 1
 
-  local archive="$name.tgz"
-  [ -e "$archive" ]                                                   \
-    && echo -n >&2 "$usage\nFile with archive name already exists.\n" \
+  local archive="${name%.tgz}.tgz"
+  [ -e "$archive" ]                                         \
+    && print-error "File with archive name already exists." \
     && return 1
 
   shift && local secretkeys="$@"
 
   # tmp and tar
   local tmpdir=$(mktemp -d "/tmp/${program}_XXXXXX")
-  [ -z "$tmpdir" ]                                      \
-    && echo >&2 "Failed to create temporary directory." \
+  [ -z "$tmpdir" ]                                         \
+    && print-error "Failed to create temporary directory." \
     && return 1
-  pushd "$tmpdir"
-  gpg --armor --output pub.asc --export-options backup --export
-  gpg --armor --output sec.asc --export-options backup --export-secret-keys $secretkeys
-  gpg --armor --output sub.asc --export-options backup --export-secret-subkeys $secretkeys
-  gpg --export-ownertrust > otrust.txt
-  tar -czf archive.tgz .
-  popd
 
-  if mv "$tmpdir/archive.tgz" "$archive"; then
+  print-info "Created temporary directory, $tmpdir"
+
+  silent-pushd "$tmpdir"
+    print-info "Exporting public keys..."
+    gpg --armor --output public-keys.asc \
+      --export-options backup --export
+    print-info "Exporting secret keys... (may require passphrase!)"
+    gpg --armor --output secret-keys.asc \
+      --export-options backup --export-secret-keys $secretkeys
+    print-info "Exporting secret subkeys... (may require passphrase!)"
+    gpg --armor --output secret-subkeys.asc \
+      --export-options backup --export-secret-subkeys $secretkeys
+    print-info "Exporting ownertrust..."
+    gpg --export-ownertrust > owner-trust.txt
+    tar -czf archive.tgz *
+  silent-popd
+
+  local tmp_archive="$tmpdir/archive.tgz"
+
+  if mv "$tmp_archive" "$archive"; then
     # successfully move to destination
-    echo >&2 "Done."
-    rm -r "$tmpdir"
+    print-info "Done. Removing temporary directory, $tmpdir"
+    \rm -r "$tmpdir"
   else
     # failed to move to destination
-    echo >&2 "Failed to move $tmpdir/archive.tgz into destination $archive"
+    print-error "Failed to move $tmp_archive into destination $archive!"
+    print-error "If root is required, move $tmp_archive manually!"
   fi
 }
 

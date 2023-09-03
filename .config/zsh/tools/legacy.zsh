@@ -3,7 +3,7 @@
 # I tried to go suckless and it turned out that designing your own desktop
 # environment is not very productive. These are left for historic reasons.
 
-function sensitivity() {
+sensitivity() {
   USAGE="usage: sensitivity [SCALE=1.3] [DEVICE=\$__OPSEC_PRIMARY_MOUSE]"
   SCALE=$1 && [ -z "${SCALE:=1.3}" ] \
     && echo >&2 "$USAGE" \
@@ -19,7 +19,7 @@ function sensitivity() {
     || echo >&2 "FAIL"
 }
 
-function audio-concat() {
+audio-concat() {
   OUTFILE=${1:?"audioconcat OUTPUT INPUT..."}
   OUTLIST="$OUT.audioconcat-tmp.in"
   shift
@@ -37,7 +37,7 @@ function audio-concat() {
   rm "$OUTLIST"
 }
 
-function pdf-diff() {
+pdf-diff() {
   # This very crudly uses ImageMagick to detect pixel differences between pages 
   # of two PDF files and overlay the difference on the new file by using a 
   # ridiculously small DPI to make the "smudges" easier to spot when blazing 
@@ -85,7 +85,7 @@ function pdf-diff() {
   pdftk "$DIR_DIFF/"*.pdf cat output "$OUTPUT"
 }
 
-function pdf-merge() {
+pdf-merge() {
   # This is mostly a historic relic at this point. I have been using pdftk for 
   # a while now which is significantly more productive that this garbage. You 
   # can tell I wrote this a long time ago by the fact that I didn't know about 
@@ -103,7 +103,7 @@ function pdf-merge() {
   /usr/bin/gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$OUT" $@
 }
 
-function tex-docm() {
+tex-docm() {
   # I believe the reason I wrote this was because the original texdoc didn't 
   # open the PDF documentation files for whatever reason. This was a pretty
   # simple solution.
