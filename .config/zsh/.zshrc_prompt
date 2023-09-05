@@ -1,4 +1,4 @@
-function _prompt_logon() {
+_prompt_logon() {
   # '\n<user>@<hostname>' with user and hostname bolded. Additionally, if we're 
   # root, we make it red so we make slightly fewer mistakes. The newline at the
   # beginning is to separate the previous output from the fresh prompt.
@@ -13,7 +13,7 @@ function _prompt_logon() {
     || echo -n "\n$W%n$w@$W%m$o"
 }
 
-function _prompt_ssh() {
+_prompt_ssh() {
   # ' [<addr>]' (space intentional) bolded, where <addr> is the client IP 
   # address, if we're in an SSH session.
   if [ -n "$SSH_CONNECTION" ]; then
@@ -24,7 +24,7 @@ function _prompt_ssh() {
   fi
 }
 
-function _prompt_git() {
+_prompt_git() {
   # ' [<branch>]' (space intentional) bolded, where <branch> is the branch of
   # the git repository we're in. If not in a repo, nothing is displayed.
   local guard=100
@@ -52,14 +52,14 @@ function _prompt_git() {
   fi
 }
 
-function _prompt_cwd() {
+_prompt_cwd() {
   # ' <cwd>' (space intentional) bolded. 
   local W=$(print "%{$fg_bold[white]%}")
   local o=$(print "%{$reset_color%}")
   echo -n " $W%~$o"
 }
 
-function _prompt_indicator() {
+_prompt_indicator() {
   # '<$0> ' where $0 is the desired indicator or '$' by default.
   [ $(id -u) -eq 0 ] \
     && local def='#' \
