@@ -1,3 +1,5 @@
+. "$XDG_CONFIG_HOME/zsh/.zprofile_private"
+
 # mostly defaults, but here just in case
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -10,8 +12,6 @@ export XDG_DATA_DIRS=(
   "/usr/share:"
 )
 export XDG_CONFIG_DIRS="/etc/xdg"
-
-. "$XDG_CONFIG_HOME/zsh/.zprofile_private"
 
 # paths
 export PATH="$HOME/.local/bin:$PATH"

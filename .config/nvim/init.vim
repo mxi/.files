@@ -285,10 +285,10 @@ function! s:SetupTsv()
 endfunction
 autocmd BufRead,BufNewFile *.tsv call s:SetupTsv()
 
-function! s:SetupReadme()
+function! s:SetupMarkdown()
   setlocal cc=80
 endfunction
-autocmd BufRead,BufNewFile README* call s:SetupReadme()
+autocmd BufRead,BufNewFile *.md call s:SetupReadme()
 
 function! s:SetupPlanfile()
   setlocal cc=72

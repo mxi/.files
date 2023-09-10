@@ -1,8 +1,5 @@
 export GPG_TTY=$(tty)
 
-export DOTMAPREPO="$HOME/.map/repo"
-export DOTMAPTEST="$HOME/.map/test"
-
 # bootstrap 
 setopt extendedglob
 setopt promptsubst
@@ -24,6 +21,7 @@ done
 
 # git
 alias dotfiles="git --git-dir=$HOME/.files/ --work-tree=$HOME"
+alias gco="git cat-file --batch-check --batch-all-objects"
 alias glo="git log --oneline"
 alias gs="git status"
 
