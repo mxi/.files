@@ -1,30 +1,49 @@
-. "$XDG_CONFIG_HOME/zsh/.zprofile_private"
+print_error() {
+  [ -t 1 ] && echo -e "\033[31m${*}\033[0m"
+}
 
-# mostly defaults, but here just in case
+# xdg
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_DATA_DIRS=(
-  "$HOME/.local/share/flatpak/exports/share:"
-  "/var/lib/flatpak/exports/share:"
-  "/usr/local/share:"
-  "/usr/share:"
-)
 export XDG_CONFIG_DIRS="/etc/xdg"
+xdg_data_dirs=(
+  "$HOME/.local/share/flatpak/exports/share"
+  "/var/lib/flatpak/exports/share"
+  "/usr/local/share"
+  "/usr/share"
+)
+export XDG_DATA_DIRS="${(j|:|)xdg_data_dirs}"
 
 # paths
-export PATH="$HOME/.local/bin:$PATH"
-export PYTHONHISTORY="$XDG_CACHE_HOME/.python_history"
+path=(
+  "$HOME/.local/bin/"
+  "$PATH"
+)
+export PATH="${(j|:|)path}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
 # programs
-export EDITOR="$(which nvim)"
-export TERMINAL="$(which alacritty)"
-export PAGER=$(which less)
-export MANPAGER="$EDITOR +'Man!' -o -"
+EDITOR="$(which nvim)" && export EDITOR || {
+  print_error "EDITOR: nvim not found."
+  unset EDITOR
+}
+TERMINAL="$(which alacritty)" && export TERMINAL || {
+  print_error "TERMINAL: alacritty not found."
+  unset TERMINAL
+}
+PAGER="$(which less)" && export PAGER || {
+  print_error "PAGER: less not found (???)."
+  unset PAGER
+}
+
+if [[ "$EDITOR" == *nvim ]] && [[ "$($EDITOR --version | head -n 1)" < "NVIM v0.7.3" ]]; then
+  export MANPAGER="$EDITOR +'Man!' -o -"
+fi
 
 # home cleanup
+export PYTHONHISTORY="$XDG_CACHE_HOME/.python_history"
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/XCompose/main"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
@@ -38,12 +57,15 @@ export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
-# dwm colors
-export DWM_CLR_STD='\x0b'
-export DWM_CLR_WHT='\x0c'
-export DWM_CLR_RED='\x0d'
-export DWM_CLR_GRN='\x0e'
-export DWM_CLR_BLU='\x0f'
+# ls
+eval $(dircolors >&/dev/null -b)
+
+# ssh
+export SSH_AUTH_SOCK="$HOME/.ssh/sock"
+SSH_AGENT_PID="$(pidof ssh-agent)" && export SSH_AGENT_PID || {
+  ssh-agent >&/dev/null -a "$SSH_AUTH_SOCK" && \
+    export SSH_AGENT_PID="$(pidof ssh-agent)"
+}
 
 # alacritty
 export WINIT_X11_SCALE_FACTOR=1
@@ -51,21 +73,19 @@ export WINIT_X11_SCALE_FACTOR=1
 # nnn
 export NNN_COLORS="#fffcf9f6"
 export NNN_PLUG='1:-!&xournalpp $nnn;'
-eval $(dircolors >&/dev/null -b)
 
 # neovide
 export NEOVIM_BIN="$EDITOR"
 
-# ssh
-eval $(ssh-agent 2>&/dev/null -s)
+. "$XDG_CONFIG_HOME/zsh/.zprofile_private"
 
-# manual xorg
-if ! pidof >&/dev/null Xorg; then
+# X
+pidof >&/dev/null Xorg || {
   # we can't set it outside because it breaks login managers (obviously)
   export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
   # sleep in case we screw up config
   sleep 0.5
   startx
-fi
+}
 
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh
