@@ -1,76 +1,107 @@
 _prompt_logon() {
-  # '\n<user>@<hostname>' with user and hostname bolded. Additionally, if we're 
-  # root, we make it red so we make slightly fewer mistakes. The newline at the
-  # beginning is to separate the previous output from the fresh prompt.
-  local R=$(print "%{$fg_bold[red]%}")
-  local r=$(print "%{$fg_no_bold[red]%}")
-  local W=$(print "%{$fg_bold[white]%}")
-  local w=$(print "%{$fg_no_bold[white]%}")
-  local o=$(print "%{$reset_color%}")
+  # echos 'USER@HOSTNAME' 
+  #   where USER and HOSTNAME are the directives for ZSH to replace with the
+  #   actual user and hostname. Additionally, if we're root, we make it red so 
+  #   to intimidate us in the hopes of avoiding mistakes.
+  local R=$(print "%{$reset_color%}")
 
-  [ $(id -u) -eq 0 ] \
-    && echo -n "\n$R%n$r@$R%m$o" \
-    || echo -n "\n$W%n$w@$W%m$o"
+  [ "$(id -u)" -eq 0 ] && {
+    local C=$(print "%{$fg_bold[red]%}")
+    local c=$(print "%{$fg_no_bold[red]%}")
+  } || {
+    local C=$(print "%{$fg_bold[white]%}")
+    local c=$(print "%{$fg_no_bold[white]%}")
+  }
+
+  echo -n "${C}%n${c}@${C}%m${R}"
 }
 
 _prompt_ssh() {
-  # ' [<addr>]' (space intentional) bolded, where <addr> is the client IP 
-  # address, if we're in an SSH session.
+  # echos '[ADDR]' 
+  #   where ADDR is the client IP address, if we're in an SSH session, bolded 
+  #   red. If not in SSH, nothing is echo'd.
   if [ -n "$SSH_CONNECTION" ]; then
-    local R=$(print "%{$fg_bold[red]%}")
-    local o=$(print "%{$reset_color%}")
+    local C="%{$fg_bold[red]%}"
+    local R="%{$reset_color%}"
     local addr=$(echo -n $SSH_CONNECTION | cut -d' ' -f1)
-    echo -n "$R" "[$addr]$o"
+    echo -n "${C}[$addr]${R}"
   fi
 }
 
 _prompt_git() {
-  # ' [<branch>]' (space intentional) bolded, where <branch> is the branch of
-  # the git repository we're in. If not in a repo, nothing is displayed.
-  local guard=100
-  local savedir=""
-  local searchdir=$(pwd)
-  until [ "$searchdir" = "$savedir" -o -d "$searchdir/.git" ]; do
-    savedir="$searchdir"
-    searchdir="${searchdir%/*}"
-    if [ ${guard::=$((guard-1))} -eq 0 ]; then
-      echo >&2 "_prompt_git: iteration limit reached!" > $(tty)
-      break
-    fi
-  done
+  # echos '[HEAD]' 
+  #   where HEAD is the current head of the git repository we're in, bolded 
+  #   green. If it's a detached HEAD, the first 5 characters of the commit's 
+  #   SHA1 is shown in bolded yellow. If not in a repo, nothing is echo'd.
+  local head style name
 
-  if [ -d "$searchdir" ] && git >&/dev/null branch; then
-    local name=$(git branch --show-current)
-  else
-    unset local name
+  if head="$(git 2>/dev/null symbolic-ref HEAD)"; then {
+    # symbolic ref
+    style="$(echo -n "%{$fg_bold[green]%}")"
+    name="${head#refs/heads/}"
+  }
+  elif head="$(git 2>/dev/null rev-parse HEAD)"; then {
+    # detached head
+    style="$(echo -n "%{$fg_bold[yellow]%}")"
+    name="${head[1,5]}"
+  } 
   fi
 
-  if [ -n "$name" ]; then
-    local G=$(print "%{$fg_bold[green]%}")
-    local o=$(print "%{$reset_color%}")
-    echo -n "$G" "[$name]%o"
-  fi
+  [ -n "$name" ] && {
+    echo -n "${style}[$name]%{$reset_color%}"
+  }
 }
 
 _prompt_cwd() {
-  # ' <cwd>' (space intentional) bolded. 
-  local W=$(print "%{$fg_bold[white]%}")
-  local o=$(print "%{$reset_color%}")
-  echo -n " $W%~$o"
+  # echos 'CWD' 
+  #   where CWD is the current working directory, bolded. 
+  local C="%{$fg_bold[white]%}"
+  local R="%{$reset_color%}"
+  echo -n "${C}%~${R}"
 }
 
 _prompt_indicator() {
-  # '<$0> ' where $0 is the desired indicator or '$' by default.
-  [ $(id -u) -eq 0 ] \
-    && local def='#' \
-    || local def='$'
-  local W=$(print "%{$fg_bold[white]%}")
-  local o=$(print "%{$reset_color%}")
-  local c=${1:-$def}
-  echo -n "$W$c$o "
+  # echos 'IND' 
+  #   where IND is the desired indicator or '$' by default, bolded.
+  [ "$(id -u)" -eq 0 ] && {
+    local def='#'
+  } || {
+    local def='$'
+  }
+  local C="%{$fg_bold[white]%}"
+  local R="%{$reset_color%}"
+  local I="${1:-$def}"
+  echo -n "${C}${I}${R}"
 }
 
-export PS1=$'$(_prompt_logon)$(_prompt_ssh)$(_prompt_git)$(_prompt_cwd)\n$(_prompt_indicator)'
-export PS2=$'$(_prompt_indicator \'|\')'
+_prompt1() {
+  local builder=""
+
+  local logon="$(_prompt_logon)"
+  [ -n "$logon" ] && builder+="$logon"
+
+  local ssh="$(_prompt_ssh)"
+  [ -n "$ssh" ] && builder+=" $ssh"
+
+  local git="$(_prompt_git)"
+  [ -n "$git" ] && builder+=" $git"
+
+  local cwd="$(_prompt_cwd)"
+  [ -n "$cwd" ] && builder+=" $cwd"
+
+  builder+="\n"
+
+  local indicator="$(_prompt_indicator)"
+  [ -n "$indicator" ] && builder+="$indicator "
+
+  echo -n "$builder"
+}
+
+_prompt2() {
+  echo -n "$(_prompt_indicator \'|\') "
+}
+
+PS1=$'$(_prompt1)'
+PS2=$'$(_prompt2)'
 
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh
