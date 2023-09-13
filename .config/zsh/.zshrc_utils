@@ -35,8 +35,11 @@ print_error() {
 
 read_yes_no() {
   local prompt="${1:-prompt needed}"
-  local answer="__null__"
-  while [[ "YES" != "$answer:u"* ]] && [[ "NO" != "$answer:u"* ]]; do
+  local answer
+  while [ "${#answer}" -eq 0 ] || { 
+    [[ "YES" != "$answer:u"* ]] && [[ "NO" != "$answer:u"* ]]
+  }
+  do
     echo -n "$prompt (y/n): "
     read answer
   done

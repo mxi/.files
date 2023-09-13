@@ -1,11 +1,11 @@
 /*
 
-!helpers
 !tools
 
 !.zprofile
 !.zshrc
 !.zshrc_functions
 !.zshrc_prompt
+!.zshrc_utils
 
 !.gitignore

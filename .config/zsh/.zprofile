@@ -1,5 +1,20 @@
+print_warning() {
+  [ -t 1 ] && echo -e "\033[93m${*}\033[0m" || echo "${*}"
+}
+
 print_error() {
-  [ -t 1 ] && echo -e "\033[31m${*}\033[0m"
+  [ -t 1 ] && echo -e "\033[91m${*}\033[0m" || echo "${*}"
+}
+
+get_pid() {
+  if type >&/dev/null pgrep; then
+    pgrep -xn "${1:?}"
+  elif type >&/dev/null pidof; then
+    pidof -s "${1:?}"
+  else
+    print_error "No process inspection commands (pgrep, pidof) on PATH!"
+    exit 1
+  fi
 }
 
 # xdg
@@ -34,11 +49,11 @@ TERMINAL="$(which alacritty)" && export TERMINAL || {
   unset TERMINAL
 }
 PAGER="$(which less)" && export PAGER || {
-  print_error "PAGER: less not found (???)."
+  print_error "PAGER: less not found (??)."
   unset PAGER
 }
 
-if [[ "$EDITOR" == *nvim ]] && [[ "$($EDITOR --version | head -n 1)" < "NVIM v0.7.3" ]]; then
+if [[ "$EDITOR" = *nvim ]] && [[ "$($EDITOR --version | head -n 1)" < "NVIM v0.7.3" ]]; then
   export MANPAGER="$EDITOR +'Man!' -o -"
 fi
 
@@ -58,13 +73,22 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # ls
-eval $(dircolors >&/dev/null -b)
+eval $(dircolors -b)
 
 # ssh
-export SSH_AUTH_SOCK="$HOME/.ssh/sock"
-SSH_AGENT_PID="$(pidof ssh-agent)" && export SSH_AGENT_PID || {
-  ssh-agent >&/dev/null -a "$SSH_AUTH_SOCK" && \
-    export SSH_AGENT_PID="$(pidof ssh-agent)"
+SSH_AUTH_SOCK="$HOME/.ssh/sock"
+SSH_AGENT_PID="$(get_pid ssh-agent)" || {
+  [ -S "$SSH_AUTH_SOCK" ] && {
+    print_warning "Removing $SSH_AUTH_SOCK to allow ssh-agent to spawn!"
+    rm "$SSH_AUTH_SOCK"
+  }
+  ssh-agent 1>/dev/null -a "$SSH_AUTH_SOCK" && {
+    SSH_AGENT_PID="$(get_pid ssh-agent)"
+  }
+}
+[ -n "$SSH_AGENT_PID" ] && {
+  export SSH_AUTH_SOCK
+  export SSH_AGENT_PID
 }
 
 # alacritty
@@ -77,10 +101,10 @@ export NNN_PLUG='1:-!&xournalpp $nnn;'
 # neovide
 export NEOVIM_BIN="$EDITOR"
 
+# finalize
 . "$XDG_CONFIG_HOME/zsh/.zprofile_private"
 
-# X
-pidof >&/dev/null Xorg || {
+get_pid >&/dev/null Xorg || {
   # we can't set it outside because it breaks login managers (obviously)
   export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
   # sleep in case we screw up config

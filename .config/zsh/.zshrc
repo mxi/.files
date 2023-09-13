@@ -2,6 +2,7 @@ export GPG_TTY=$(tty)
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # bootstrap 
+setopt glob_dots
 setopt extendedglob
 setopt promptsubst
 
@@ -10,15 +11,14 @@ autoload -U run-help
 autoload -U colors && colors
 autoload -U compinit && compinit
 
+. "$ZDOTDIR/.zshrc_utils"
 . "$ZDOTDIR/.zshrc_prompt"
 
-[ -d "$ZDOTDIR/helpers" ] && for helper in $(ls "$ZDOTDIR/helpers"); do
-  . "$ZDOTDIR/helpers/$helper"
-done
-
-[ -d "$ZDOTDIR/tools" ] && for tool in $(ls "$ZDOTDIR/tools"); do
-  . "$ZDOTDIR/tools/$tool"
-done
+[ -d "$ZDOTDIR/tools" ] && {
+  for tool in $(ls "$ZDOTDIR/tools"); do
+    . "$ZDOTDIR/tools/$tool"
+  done
+}
 
 # git
 alias dotfiles="git --git-dir=$HOME/.files/ --work-tree=$HOME"
@@ -75,6 +75,7 @@ alias e="$EDITOR"
 alias v="/usr/bin/neovide"
 alias hexdump="hexdump -C"
 alias make="make -j8"
+alias man="man -E latin1"
 alias mpv="mpv --script-opts=osc-timems=yes"
 alias pandoc="pandoc --pdf-engine=xelatex"
 alias rm="echo 'be careful, partner.'; false"
