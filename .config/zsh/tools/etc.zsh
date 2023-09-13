@@ -31,11 +31,11 @@ set-color-preference() {
         gsettings set org.gnome.desktop.interface color-scheme prefer-dark
       ;;
       *)
-        print-error "Theme must be either 'light' or 'dark' (case sensitive.)"
+        print_error "Theme must be either 'light' or 'dark' (case sensitive.)"
       ;;
     esac
   else
-    print-error "usage: set-color-preference <light|dark>"
+    print_error "usage: set-color-preference <light|dark>"
   fi
 }
 

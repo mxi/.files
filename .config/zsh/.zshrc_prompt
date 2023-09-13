@@ -52,6 +52,17 @@ _prompt_git() {
   }
 }
 
+_prompt_venv() {
+  # echos '[venv]'
+  #   if there is an active virtual environment.
+  [ -n "$VIRTUAL_ENV" ] && {
+    local C="%{$fg_bold[cyan]%}"
+    local Y="%{$fg_bold[yellow]%}"
+    local R="%{$reset_color%}"
+    echo -n "${C}[${Y}$(basename "$VIRTUAL_ENV")${C}]${R}"
+  }
+}
+
 _prompt_cwd() {
   # echos 'CWD' 
   #   where CWD is the current working directory, bolded. 
@@ -85,6 +96,9 @@ _prompt1() {
 
   local git="$(_prompt_git)"
   [ -n "$git" ] && builder+=" $git"
+
+  local venv="$(_prompt_venv)"
+  [ -n "$venv" ] && builder+=" $venv"
 
   local cwd="$(_prompt_cwd)"
   [ -n "$cwd" ] && builder+=" $cwd"

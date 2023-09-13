@@ -1,4 +1,5 @@
 export GPG_TTY=$(tty)
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # bootstrap 
 setopt extendedglob

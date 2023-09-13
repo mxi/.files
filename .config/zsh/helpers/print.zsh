@@ -13,24 +13,34 @@ print_() >&2 {
   print "${print__prefix}$@$reset_color"
 }
 
-print-debug() {
+print_debug() {
   local print__style="$reset_color"
   print_ "$@"
 }
 
-print-info() {
+print_info() {
   local print__style="$fg[white]"
   print_ "$@"
 }
 
-print-warning() {
+print_warning() {
   local print__style="$fg[yellow]"
   print_ "$@"
 }
 
-print-error() {
+print_error() {
   local print__style="$fg[red]"
   print_ "$@"
+}
+
+read_yes_no() {
+  local prompt="${1:-prompt needed}"
+  local answer="__null__"
+  while [[ "YES" != "$answer:u"* ]] && [[ "NO" != "$answer:u"* ]]; do
+    echo -n "$prompt (y/n): "
+    read answer
+  done
+  [[ "YES" = "$answer:u"* ]] && return 0 || return 1
 }
 
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh

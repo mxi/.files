@@ -383,7 +383,8 @@ endfunction
 autocmd FileType rust call s:SetupRust()
 
 function! s:SetupPython()
-  set cc=80
+  setlocal cc=80
+  setlocal cino=(0,l1,:0
   iabbrev <buffer> shebang #!/usr/bin/env python3
 endfunction
 autocmd FileType python call s:SetupPython()
