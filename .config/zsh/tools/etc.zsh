@@ -25,8 +25,20 @@ what_the_commit() {
   curl 2>/dev/null "https://whatthecommit.com/index.txt"
 }
 
-concat_audio_files() {
-  local usage="usage: concat_audio_files OUTPUT INPUT..."
+concat_media_files() {
+  local usage="usage: concat_media_files [audio|video] OUTPUT INPUT..."
+
+  local media_type="$1" && shift >&/dev/null || {
+    print_error "$usage"
+    return 1
+  }
+  if [ "$media_type:l" = "video" ]; then
+    local video=1
+  elif [ "$media_type:l" != "audio" ]; then
+    print_error "First argument must either be 'audio' or 'video'."
+    return 1
+  fi
+
   local output="$1" && shift >&/dev/null || {
     print_error "$usage"
     return 1
@@ -38,13 +50,30 @@ concat_audio_files() {
 
   for file in "$@"; do
     inputs+=("-i" "$file")
-    filter+="[${index}:a]"
+    [ $video -eq 1 ] && {
+      filter+="[${index}:v][${index}:a]"
+    } || {
+      filter+="[${index}:a]"
+    }
     index+=1
   done
 
-  filter+="concat=n=${index}:v=0:a=1 [a]"
+  local maps
 
-  ffmpeg $inputs -filter_complex "$filter" -map '[a]' "$output"
+  [ $video -eq 1 ] && {
+    filter+="concat=n=${index}:v=1:a=1 [v] [a]"
+    maps=(
+      "-map" "[v]"
+      "-map" "[a]"
+    )
+  } || {
+    filter+="concat=n=${index}:v=0:a=1 [a]"
+    maps=(
+      "-map" "[a]"
+    )
+  }
+
+  ffmpeg $inputs -filter_complex "$filter" $maps "$output"
 }
 
 set_color_preference() {
