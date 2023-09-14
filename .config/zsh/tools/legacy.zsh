@@ -19,25 +19,7 @@ sensitivity() {
     || echo >&2 "FAIL"
 }
 
-audio-concat() {
-  OUTFILE=${1:?"audioconcat OUTPUT INPUT..."}
-  OUTLIST="$OUT.audioconcat-tmp.in"
-  shift
-
-  for file in "$@"; do 
-    echo "file '$file'\n"
-  done > "$OUTLIST"
-
-  ffmpeg -f concat \
-     -safe 0 \
-     -i "$OUTLIST" \
-     -c copy \
-     "$OUTFILE"
-
-  rm "$OUTLIST"
-}
-
-pdf-diff() {
+pdf_diff() {
   # This very crudly uses ImageMagick to detect pixel differences between pages 
   # of two PDF files and overlay the difference on the new file by using a 
   # ridiculously small DPI to make the "smudges" easier to spot when blazing 
@@ -85,7 +67,7 @@ pdf-diff() {
   pdftk "$DIR_DIFF/"*.pdf cat output "$OUTPUT"
 }
 
-pdf-merge() {
+pdf_merge() {
   # This is mostly a historic relic at this point. I have been using pdftk for 
   # a while now which is significantly more productive that this garbage. You 
   # can tell I wrote this a long time ago by the fact that I didn't know about 
@@ -103,7 +85,7 @@ pdf-merge() {
   /usr/bin/gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$OUT" $@
 }
 
-tex-docm() {
+tex_docm() {
   # I believe the reason I wrote this was because the original texdoc didn't 
   # open the PDF documentation files for whatever reason. This was a pretty
   # simple solution.

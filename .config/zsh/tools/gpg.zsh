@@ -1,12 +1,12 @@
-silent-pushd() >&/dev/null {
+silent_pushd() >&/dev/null {
   pushd "$@"
 }
 
-silent-popd() >&/dev/null {
+silent_popd() >&/dev/null {
   popd
 }
 
-gpg-export() {
+gpg_export() {
   local program="$0"
   local usage="usage: $program ARCHIVE-NAME [SECRET-KEY...]"
 
@@ -32,7 +32,7 @@ gpg-export() {
 
   print_info "Created temporary directory, $tmpdir"
 
-  silent-pushd "$tmpdir"
+  silent_pushd "$tmpdir"
     print_info "Exporting public keys..."
     gpg --armor --output public-keys.asc \
       --export-options backup --export
@@ -45,7 +45,7 @@ gpg-export() {
     print_info "Exporting ownertrust..."
     gpg --export-ownertrust > owner-trust.txt
     tar -czf archive.tgz *
-  silent-popd
+  silent_popd
 
   local tmp_archive="$tmpdir/archive.tgz"
 
