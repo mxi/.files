@@ -33,6 +33,7 @@ export XDG_DATA_DIRS="${(j|:|)xdg_data_dirs}"
 
 # paths
 path=(
+  "$HOME/script"
   "$HOME/.local/bin/"
   "$PATH"
 )

@@ -4,7 +4,8 @@
 !.local
 !.ssh/config
 
-!.xinitrc
-!.zshenv
+!script
 
 !.gitignore
+!.xinitrc
+!.zshenv
