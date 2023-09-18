@@ -72,6 +72,7 @@ export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export MYPY_CACHE_DIR="$XDG_CACHE_HOME/mypy"
 
 # ls
 eval $(dircolors -b)
