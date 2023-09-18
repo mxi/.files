@@ -112,7 +112,7 @@ _prompt1() {
 }
 
 _prompt2() {
-  echo -n "$(_prompt_indicator \'|\') "
+  echo -n "$(_prompt_indicator '|') "
 }
 
 PS1=$'$(_prompt1)'
