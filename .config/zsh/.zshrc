@@ -65,25 +65,25 @@ alias cdvmrack="cd ~/vmrack"
 # coreutils
 alias grep="grep -En --color=auto"
 alias ls="ls -vAh --group-directories-first --color=auto"
+
+# singlechars
+alias e="$EDITOR"
 alias l="ls -l"
 
 # miscellaneous aliases
-alias diff="diff -u --color=auto"
-alias cls="clear && l"
 alias clm="clear && make"
-alias e="$EDITOR"
-alias v="/usr/bin/neovide"
+alias cls="clear && l"
+alias dasm="objdump -d -M intel"
+alias diff="diff -u --color=auto"
 alias hexdump="hexdump -C"
 alias make="make -j8"
 alias man="man -E latin1"
 alias mpv="mpv --script-opts=osc-timems=yes"
-alias pandoc="pandoc --pdf-engine=xelatex"
-alias rm="echo 'be careful, partner.'; false"
-alias xpp="xournalpp >>& /dev/null"
-alias dasm="objdump -d -M intel"
-alias open="xdg-open"
-alias pdf="zathura >>& /dev/null"
 alias nnn="nnn -de"
+alias open="xdg-open"
+alias pandoc="pandoc --pdf-engine=xelatex"
+alias pdf="zathura >>& /dev/null"
+alias xpp="xournalpp >>& /dev/null"
 
 . $ZDOTDIR/.zshrc_private
 
