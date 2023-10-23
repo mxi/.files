@@ -291,10 +291,13 @@ endfunction
 autocmd BufRead,BufNewFile *.md call s:SetupReadme()
 
 function! s:SetupPlanfile()
-  setlocal cc=72
-  nnoremap <buffer> <leader>r /REMIND<cr>:set nohls<cr>j
-  nnoremap <buffer> <leader>m :read !date +"\%Y-\%m-\%d (\%A, \%B \%d, \%Y)"<cr>
-                             \<ESC>o<ESC>72i=<ESC>0
+  function! Prefix()
+    let date = system("date '+%m-%d'")[:-2]
+    let current = getline(".")
+    call setline(".", "[ ] "..date..": "..current)
+  endfunction
+  nnoremap <buffer> <tab> :call Prefix()<cr>
+  inoremap <buffer> <tab> <esc>:call Prefix()<cr>$a
 endfunction
 autocmd BufRead,BufNewFile planfile call s:SetupPlanfile()
 

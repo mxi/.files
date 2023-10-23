@@ -18,5 +18,6 @@ picom &
 redshift &
 monitors &
 exec /usr/bin/awesome
+# exec /usr/bin/startxfce4
 
 # vi: sw=2 sts=2 ts=2 et ft=sh

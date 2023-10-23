@@ -73,6 +73,7 @@ export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export MYPY_CACHE_DIR="$XDG_CACHE_HOME/mypy"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # ls
 eval $(dircolors -b)
