@@ -16,7 +16,7 @@ pulseaudio-equalizer enable &
 ibus-daemon --xim &
 picom &
 redshift &
-monitors &
+legacy-monitors.sh &
 exec /usr/bin/awesome
 # exec /usr/bin/startxfce4
 

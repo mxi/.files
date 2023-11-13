@@ -294,7 +294,7 @@ function! s:SetupPlanfile()
   function! Prefix()
     let date = system("date '+%m-%d'")[:-2]
     let current = getline(".")
-    call setline(".", "[ ] "..date..": "..current)
+    call setline(".", "[ ] "..date.." "..current)
   endfunction
   nnoremap <buffer> <tab> :call Prefix()<cr>
   inoremap <buffer> <tab> <esc>:call Prefix()<cr>$a
