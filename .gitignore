@@ -4,7 +4,7 @@
 !.local
 !.ssh/config
 
-!script
+!bin
 
 !.gitignore
 !.xinitrc
