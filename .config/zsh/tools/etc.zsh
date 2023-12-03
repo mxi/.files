@@ -103,4 +103,28 @@ delete_nvim_swapfiles() {
   \rm -irf "$HOME/.local/share/nvim/swap/"*
 }
 
+sensitivity() {
+  local program="sensitivity"
+  local usage="usage: sensitivity [SCALE=1.3 [DEVICE=\$__OPSEC_PRIMARY_MOUSE]]"
+
+  local scale=$1 
+  [ -z "${scale:=1.3}" ] && {
+    print_error "$usage"
+    return 1
+  }
+
+  local device=$2 
+  [ -z "${device:=$__OPSEC_PRIMARY_MOUSE}" ] && {
+    print_error "$usage"
+    return 1
+  }
+
+  xinput set-prop "$device" "Coordinate Transformation Matrix" \
+    $scale    0.0   0.0 \
+       0.0 $scale   0.0 \
+       0.0    0.0   1.0 \
+    && echo "OK" \
+    || print_error "FAIL"
+}
+
 # vi: sw=2 sts=2 ts=2 et cc=80 ft=zsh
