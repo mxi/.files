@@ -1,7 +1,6 @@
-colors () {
+colors() {
   # Ripped from the colors autoload and made a bit nicer.
-  typeset -Ag color
-  color=(
+  typeset -Ag color=(
     00  none 
     01  bold 
     02  faint 
@@ -18,6 +17,7 @@ colors () {
     28  no-conceal 
     30  black 
     31  red 
+    32  green
     33  yellow 
     34  blue 
     35  magenta 
@@ -33,7 +33,6 @@ colors () {
     46  bg-cyan 
     47  bg-white 
     49  bg-default
-    132 green 
   )
 
   local k
@@ -77,13 +76,13 @@ colors () {
 
 print_() >&2 {
   # +program_name: an optional name of the program.
-  # -print__style: escape sequences to prefix the message.
+  # -print_style: escape sequences to prefix the message.
   #
   [ -t 1 ] && {
-    local done="$reset_color"
+    local ok="$reset_color"
     local style="$print_style"
   } || {
-    local done=""
+    local ok=""
     local style=""
   }
   [ -n "$program_name" ] && {
@@ -91,27 +90,31 @@ print_() >&2 {
   } || { 
     local prefix="${style}"
   }
-  local IFS="" && print "$prefix$*$done"
+  local IFS="" && print "$prefix$*$ok"
 }
 
 print_debug() {
-  local print__style="$reset_color"
+  local print_style="$reset_color"
   print_ "$@"
 }
 
 print_info() {
-  local print__style="$fg[white]"
+  local print_style="$fg[white]"
   print_ "$@"
 }
 
 print_warning() {
-  local print__style="$fg[yellow]"
+  local print_style="$fg[yellow]"
   print_ "$@"
 }
 
 print_error() {
-  local print__style="$fg[red]"
+  local print_style="$fg[red]"
   print_ "$@"
+}
+
+silent_type() >&/dev/null {
+  type "$@"
 }
 
 silent_pushd() >&/dev/null {
